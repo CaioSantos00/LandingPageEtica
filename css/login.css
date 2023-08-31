@@ -1,0 +1,48 @@
+#formLogin {
+    margin: 100px auto;
+    width: 400px;
+    gap: 5px;    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0px 0px 3px 2px rgb(184, 184, 184);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+
+}
+
+#titleLogin {
+    margin: 5px;
+    text-align: center;
+}
+
+.input {
+    border: none;
+    border-bottom: 2px solid #4682A9;
+    height: 30px;
+    outline: 0;
+}
+
+#entrar {
+    margin: 10px 0px;
+    padding: 8px;
+    color: #F6F4EB;
+    font-size: 1.2em;
+    border: 3px solid #4682A9;
+    border-radius: 5px;
+    background-color: #4682A9;
+    transition: .5s;
+    cursor: pointer;
+}
+
+
+#entrar:hover {
+    color: #4682A9;
+    background-color: transparent;
+}
+
+#passEsque {
+    text-align: center;
+    color: #4682A9;
+}
