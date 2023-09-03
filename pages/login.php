@@ -1,3 +1,7 @@
+<?php
+    if(isset($_POST['submit'])) echo "aaaaaaaa";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,11 +24,11 @@
     </header>
     <section>
         <div id="divForms">
-            <form action="" id="formLogin">
+            <form action="login.php" id="formLogin" method="POST">
                 <h1 class="title" id="titleLogin">Login</h1>
                 <input type="text" placeholder="Email" class="input">
                 <input type="text" placeholder="Senha" class="input">
-                <button id="entrar">Entrar</button>
+                <button id="entrar" name="submit">Entrar</button>
                 <a href="" id="passEsque">Esqueceu sua senha ?</a>
             </form>
         </div>
