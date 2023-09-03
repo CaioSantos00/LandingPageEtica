@@ -6,7 +6,7 @@ class Interatividade{
     setInputs(btnNewParag, selectedImages, maisSemiTitle, maisImagem){
         this.selectedImages = selectedImages;
         this.maisSemiTitle  = maisSemiTitle;
-        this.maisImagem   = maisImagem;
+        this.maisImagem     = maisImagem;
 
         btnNewParag.onclick = () => {
             let paragrafo = new Elemento("textArea");
