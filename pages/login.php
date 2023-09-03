@@ -1,5 +1,12 @@
 <?php
-    if(isset($_POST['submit'])) echo "aaaaaaaa";
+    $response = "false";
+    
+    if(isset($_POST['submit'])){
+        require_once "../php/LoginVerifier.php";        
+        $verify = new LoginVerifier($_POST['email'], $_POST['senha']);
+        
+        if($verify->getVerification()) $response = "true";
+    } 
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +17,11 @@
     <title>Ética | Cidadania</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
+    <script>
+        let verification = <?= $response ?>;
+        
+        if(verification == "true") location.href = "../";
+    </script>
 </head>
 <body>
      <header id='header'>
@@ -26,8 +38,8 @@
         <div id="divForms">
             <form action="login.php" id="formLogin" method="POST">
                 <h1 class="title" id="titleLogin">Login</h1>
-                <input type="text" placeholder="Email" class="input">
-                <input type="text" placeholder="Senha" class="input">
+                <input type="text" placeholder="Email" class="input" name="email">
+                <input type="text" placeholder="Senha" class="input" name="senha">
                 <button id="entrar" name="submit">Entrar</button>
                 <a href="" id="passEsque">Esqueceu sua senha ?</a>
             </form>
