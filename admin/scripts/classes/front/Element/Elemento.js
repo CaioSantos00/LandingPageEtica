@@ -16,7 +16,9 @@ class Elemento extends Definer{
 	newAdditionalElmnt(ElementoPraAdd){
 		try{
 			if(!(ElementoPraAdd instanceof Elemento)) throw "nnÉElemento";
-
+			
+			this.container.append(ElementoPraAdd)
+			
 		}catch(e){
 			if(e == "nnÉElemento") return
 		}
@@ -27,10 +29,6 @@ class Elemento extends Definer{
 		this.Element = this.newElement(this.classElement, this.elementType);		
 	}
 	getWholeElement(){
-		if(this.additionalElements.length != 0){			
-			this.container.append(this.Element, this.btnExclu, ...this.additionalElements);
-			return this.container;
-		}
 		this.container.append(this.Element, this.btnExclu);
 		return this.container;
 	}
