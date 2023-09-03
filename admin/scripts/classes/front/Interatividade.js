@@ -1,4 +1,4 @@
-import Elemento          from './Element/index.php';
+import Elemento from './Element/index.php';
 
 class Interatividade{
     constructor(){}
