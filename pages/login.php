@@ -24,12 +24,13 @@
     </header>
     <section>
         <div id="divForms">
-            <form action="login.php" id="formLogin" method="POST">
+            <form action="login.php" class="forms" method="POST">
                 <h1 class="title" id="titleLogin">Login</h1>
                 <input type="text" placeholder="Email" class="input">
                 <input type="text" placeholder="Senha" class="input">
-                <button id="entrar" name="submit">Entrar</button>
-                <a href="" id="passEsque">Esqueceu sua senha ?</a>
+                <button class="btnForms" name="submit">Entrar</button>
+                <a href="" class="textsForms">Esqueceu sua senha ?</a>
+                <a href="cadastroUsuario.html" class="textsForms">Não é um autor ? Cadastre-se</a>
             </form>
         </div>
     </section>
