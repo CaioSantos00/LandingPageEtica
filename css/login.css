@@ -1,4 +1,4 @@
-#formLogin {
+.forms {
     margin: 100px auto;
     width: 400px;
     gap: 5px;    
@@ -24,7 +24,7 @@
     outline: 0;
 }
 
-#entrar {
+.btnForms {
     margin: 10px 0px;
     padding: 8px;
     color: #F6F4EB;
@@ -37,12 +37,12 @@
 }
 
 
-#entrar:hover {
+.btnForms:hover {
     color: #4682A9;
     background-color: transparent;
 }
 
-#passEsque {
+.textsForms {
     text-align: center;
     color: #4682A9;
 }
