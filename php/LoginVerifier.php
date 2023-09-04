@@ -3,30 +3,37 @@
 		private string $email;
 		private string $senha;
 		private string $id;
+		private string $response = "true";
+		private PDO $pdo;
 		
-		private PDO $conn;
-
 		function __construct(string $email, string $senha){
-			$this->email	 =$email;
-			$this->senha	 =$senha;
-
-			$this->conn = new PDO('mysql:dbname=etica;host=localhost;charset=UTF8','root');
+			$this->senha = $senha;
+			$this->email = $email;
+			
+			$this->pdo = new PDO('mysql:dbname=etica;host=localhost;charset=UTF8','root','');
 		}
-
-		function getVerification() :bool{
-			try{
-			$query = 'select Id from autores where Email = "'.$this->email.'" and Password = "'.$this->senha.'"';
-			foreach($this->conn->query($query) as $cada){
-				$resul[] = $cada;
+		function __toString(){
+			return $this->response;
+		}
+		function verify(){			
+			$query1 = "select Id from usuarios where Email = '{$this->email}' and Password = '{$this->senha}'";
+			$query2 = "select Id from autores where Email = '{$this->email}' and Password = '{$this->senha}'";
+			
+			
+			foreach($this->pdo->query($query1) as $cada1){
+				$resul['normal'][] = $cada1;
 			}
-			if(count($resul) == 1){
-				$this->id = $resul[0];
-				return true;
+			foreach($this->pdo->query($query2) as $cada2){
+				$resul['autor'][] = $cada2;
 			}
-			return false;
-			}catch(TypeError $e){
-				if($e->getType == "TypeError") echo "mo fita";
+			
+			if(isset($resul)){
+				if(isset($resul['autor'])) header('location: ../admin/cadastroPostagem.php');
+				if(isset($resul['normal'])) header('location: ../');
+				
+				$this->response = "false";
 			}
+			
 		}
 	}
 ?>
