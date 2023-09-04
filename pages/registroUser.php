@@ -1,4 +1,5 @@
 <?php
+	$cad = "'nada'";
 	if(isset($_POST['submit'])){
 		require_once "../php/UserCadaster.php";
 		
@@ -42,7 +43,7 @@
                 <input type="text" placeholder="Email" 	class="input" name="email">
                 <input type="text" placeholder="Senha" 	class="input" name="senha">                
                 <input type="submit" id="entrar" name="submit" value="Cadastrar">                                
-                <a href="./registroUser.php" id="passEsque">já tem conta?<br> Entre</a>
+                <a href="./login.php" id="passEsque">já tem conta?<br> Entre</a>
             </form>
         </div>
     </section>
