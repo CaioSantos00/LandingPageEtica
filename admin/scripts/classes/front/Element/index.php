@@ -1,5 +1,5 @@
 <?php
-	require '../../../../vendor/autoload.php';
+	require '../../../../../vendor/autoload.php';
 	use MatthiasMullie\Minify;
 	$cacheFile = '../../../../cache/MinifiedElement.js';	
 		

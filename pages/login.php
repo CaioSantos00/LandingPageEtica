@@ -1,3 +1,15 @@
+<?php
+    $response = "false";
+    
+    if(isset($_POST['submit'])){
+        //require_once "../php/LoginVerifier.php";        
+        //$verify = new LoginVerifier($_POST['email'], $_POST['senha']);
+        
+        //if($verify->getVerification()) $response = "true";
+    } 
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
