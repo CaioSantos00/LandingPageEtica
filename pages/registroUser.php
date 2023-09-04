@@ -1,14 +1,11 @@
 <?php
-    $response = "false";
-    
-    if(isset($_POST['submit'])){
-        require_once "../php/LoginVerifier.php";        
-        $verify = new LoginVerifier($_POST['email'], $_POST['senha']);
-        
-        $verify->verify();
-    } 
+	if(isset($_POST['submit'])){
+		require_once "../php/UserCadaster.php";
+		
+		$cad = new UserCadaster($_POST['nome'], $_POST['email'],$_POST['senha']);
+		$cad->registry();		
+	}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,7 +15,13 @@
     <title>Ética | Cidadania</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
-    <!--<script src="../js/login.js"></script>-->
+    <script>
+		let resul = <?= $cad ?>;
+		
+		if(resul == "false"){
+			console.log("nem foi")
+		}
+	</script>
 </head>
 <body>
      <header id='header'>
@@ -33,13 +36,14 @@
     </header>
     <section>
         <div id="divForms">
-            <form action="login.php" id="formLogin" method="POST">
-                <h1 class="title" id="titleLogin">Login</h1>
-                <input type="text" placeholder="Email" class="input" name="email">
-                <input type="text" placeholder="Senha" class="input" name="senha">
+            <form action="registroUser.php" id="formLogin" method="POST">
+                <h1 class="title" id="titleLogin">Cadastre-se</h1>
+				<input type="text" placeholder="Nome" 	class="input" name="nome">
+                <input type="text" placeholder="Email" 	class="input" name="email">
+                <input type="text" placeholder="Senha" 	class="input" name="senha">                
                 <input type="submit" id="entrar" name="submit" value="Entrar">                
-                <a href="" id="passEsque">Esqueceu sua senha ?</a>
-                <a href="./registroUser.php" id="passEsque">Não tem conta? Cadastre-se</a>
+                <a id="passEsque">Esqueceu sua senha ?</a>
+                <a href="./registroUser.php" id="passEsque">Não tem conta?<br> Cadastre-se</a>
             </form>
         </div>
     </section>
