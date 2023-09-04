@@ -41,9 +41,8 @@
 				<input type="text" placeholder="Nome" 	class="input" name="nome">
                 <input type="text" placeholder="Email" 	class="input" name="email">
                 <input type="text" placeholder="Senha" 	class="input" name="senha">                
-                <input type="submit" id="entrar" name="submit" value="Entrar">                
-                <a id="passEsque">Esqueceu sua senha ?</a>
-                <a href="./registroUser.php" id="passEsque">Não tem conta?<br> Cadastre-se</a>
+                <input type="submit" id="entrar" name="submit" value="Cadastrar">                                
+                <a href="./registroUser.php" id="passEsque">já tem conta?<br> Entre</a>
             </form>
         </div>
     </section>
