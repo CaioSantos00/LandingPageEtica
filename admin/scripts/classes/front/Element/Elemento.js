@@ -1,5 +1,5 @@
 class Elemento extends Definer{
-	additionalElements = []
+	additionalElements = [];
 	
 	constructor(elementType){
 		super();
