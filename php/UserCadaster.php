@@ -12,6 +12,7 @@
 			
 			$this->pdo = new PDO('mysql:dbname=etica;host=localhost;charset=UTF8','root','');
 		}
+		function __toString() return "nn foi";
 		
 		function registry(){			
 			$query = $this->pdo->prepare("INSERT INTO `usuarios` (`Id`, `Name`, `Email`, `Password`, `SavedPosts`, `FollowingAuthors`) VALUES (?,?,?,?,?,?)");
