@@ -50,6 +50,7 @@ a {
     background-color: #4682A9;
     left: 0;
     bottom: -5px;
+    
     transition: 0.5s ;
     border-radius: 0.8px;
 }

@@ -22,6 +22,7 @@
         </ul>
         </nav>   
     </header>
+    
     <section>
         <div id="divForms">
             <form action="login.php" class="forms" method="POST">
