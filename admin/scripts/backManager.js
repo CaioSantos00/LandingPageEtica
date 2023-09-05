@@ -1,4 +1,5 @@
-import Envio from './classes/back/Envio.js'
+import SubmissionManager from './classes/back/SubmissionManager.js'
 
-let envio = new Envio();
-    envio.setInput('sendArticle', 'paragrafos', 'folhaEstilos', 'selectedImages','arquivos', 'autor');
+let subMan = new SubmissionManager();
+    subMan.setDivsToGetInputs('sendArticle', 'paragrafos', 'folhaEstilos', 'selectedImages','arquivos', 'autor');
+    subMan.setInputsToReceiveData('')

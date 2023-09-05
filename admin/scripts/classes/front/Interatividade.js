@@ -13,33 +13,32 @@ class Interatividade{
         btnNewParag.onclick = () => {
             let label = new Elemento('label');
                 label.setClasses('','','');
-                label.defineAdditionalData('Element', [['for', "txa"+this.aux]])
+                label.defineAdditionalData('Element', [['for', "txa"+this.aux]]);
                 label = label.getJust('Element');
                 label.innerText = 'Escreva aqui seu parágrafo';
                 
             let paragrafo = new Elemento("textArea");
-                paragrafo.setClasses("btn-close","form-floating m-3","form-control");
+                paragrafo.setClasses("btn-close","Paragrafo form-floating m-3","form-control");
                 paragrafo.defineAdditionalData('Element',[['id',"txa"+this.aux++],['placeholder','Escreva aqui seu parágrafo']]);                
-            this.divParags.append(paragrafo.getWholeElement());
-            
-                paragrafo.newAdditionalElmnt(label)
+            this.divParags.append(paragrafo.getWholeElement());            
+                paragrafo.newAdditionalElmnt(label);
         };
         this.maisSemiTitle.onclick = () => {
             let label = new Elemento('label');
                 label.setClasses('','','');
-                label.defineAdditionalData('Element', [['for', "semit"+this.aux]])
+                label.defineAdditionalData('Element', [['for', "semit"+this.aux]]);
                 label = label.getJust('Element');
                 label.innerText = 'Escreva aqui seu semi-tiulo';
                 
             let title = new Elemento("textArea");
-                title.setClasses("btn-close","form-floating m-3","form-control");
-                title.defineAdditionalData('Element', [['id', "semit"+this.aux++]])
+                title.setClasses("btn-close","SemiTitulo form-floating m-3","form-control");
+                title.defineAdditionalData('Element', [['id', "semit"+this.aux++]]);
             this.divParags.append(title.getWholeElement());
-                title.newAdditionalElmnt(label)
+                title.newAdditionalElmnt(label);
         };
         this.maisImagem.onclick = () => {
             let elmnt = new Elemento('input');
-                elmnt.setClasses('btn-close', "input-group", "form-control");                
+                elmnt.setClasses('btn-close', "Picture input-group", "form-control");                
             this.divParags.append(elmnt.getWholeElement());
         };
         
@@ -51,7 +50,7 @@ class Interatividade{
                 label.innerText = 'Escreva aqui seu elemento personalizado';
                 
             let elmnt = new Elemento('textArea');
-                elmnt.setClasses('btn-close','form-floating m-3','form-control');
+                elmnt.setClasses('btn-close','EmptySpace form-floating m-3','form-control');
                 elmnt.defineAdditionalData('Element', [['id', "semit"+this.aux++]]);
             this.divParags.append(elmnt.getWholeElement());
                 elmnt.newAdditionalElmnt(label);
