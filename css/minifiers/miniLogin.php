@@ -9,7 +9,7 @@
 	}else{		
 		
 		$minifier = new Minify\JS();	
-		$dir = array_diff(scandir("../"), [".","..","miniLogin.php"]);
+		$dir = array_diff(scandir("../"), [".",".."]);
 		foreach($dir as $file){
 			$minifier->add($file);
 		}
