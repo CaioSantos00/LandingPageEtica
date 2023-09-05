@@ -14,7 +14,7 @@
         <div class="container-fluid p-5">
             <span id="autor">ele meixmo</span>            
             <div class="row  border-2 border-bottom border-primary p-3 mb-5">
-                <div class="mt-2 col-6">
+                <div class="mt-2 col-6">,
                     <input type="text" name="titulo" placeholder="Titulo" class="form-control">
                     <input type="text" name="semiTitulo" placeholder="semiTitulo"class="form-control mt-4"><br>
                 </div>
