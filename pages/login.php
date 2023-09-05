@@ -27,7 +27,7 @@
         <ul>
             <li><a href="../index.html#home">Home</a></li>
             <li><a href="../index.html#publications">Publicações</a></li>
-            <li><a href="#">Projetos</a></li>
+            <li><a href="../pages/login.php">Login</a></li>
         </ul>
         </nav>   
     </header>
