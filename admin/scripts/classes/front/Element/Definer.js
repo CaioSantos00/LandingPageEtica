@@ -12,8 +12,7 @@ class Definer{
 			return div;
 	}
 	btnCloseIt(classForIt){
-		let btn = this.newElement(classForIt, 'button');
-            btn.innerText = "X";
+		let btn = this.newElement(classForIt, 'button');            
             btn.onclick = (e) => {
                 e.target.parentNode.remove();
             }

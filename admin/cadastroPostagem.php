@@ -11,7 +11,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid p-5">
             <span id="autor">ele meixmo</span>            
             <div class="input-group p-2">
                 <div class="mb-2 mt-2">
@@ -25,17 +25,18 @@
             <div id="selectedImages"></div>
             <div class="form-floating mb-5">
                 <textArea placeholder="Escreva aqui seu CSS" id="folhaEstilos" class="form-control"></textArea>
+                <label for="folhaEstilos"> Escreva aqui seu CSS</label>
             </div>
-            <div id="paragrafos"></div>
+            <div id="paragrafos" class="form-floating"></div>
 
             <div class="btn-toolbar" role="toolbar">
                 <div class="btn-group">
-                    <button id="maisParag" class="btn btn-primary">Novo parágrafo</button>
-                    <button id="maisSemiTitle" class="btn btn-primary">Novo semiTitulo </button>
-                    <button id="maisImagem" class="btn btn-primary">Nova Imagem </button>
+                    <button id="maisParag" class="btn btn-outline-primary">Novo parágrafo</button>
+                    <button id="maisSemiTitle" class="btn btn-outline-primary">Novo semiTitulo </button>
+                    <button id="maisImagem" class="btn btn-outline-primary">Nova Imagem </button>
                 </div>
                 <div class="btn-group ms-5">
-                    <button id="sendArticle" class="btn btn-info">Enviar artigo</button>
+                    <button id="sendArticle" class="btn btn-outline-success">Enviar artigo</button>
                 </div>
             </div>
         </div>

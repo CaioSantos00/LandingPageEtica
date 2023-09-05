@@ -1,36 +1,41 @@
 class Elemento extends Definer{
 	additionalElements = [];
-	
+
 	constructor(elementType){
 		super();
 		this.elementType = elementType;
-				
+
 	}
 	setClasses(classBtnExclu, classElementContainer, classElement){
 		this.classBtnExclu			= classBtnExclu;
 		this.classElementContainer 	= classElementContainer;
 		this.classElement 			= classElement;
-		
+
 		this.createElements();
 	}
 	newAdditionalElmnt(ElementoPraAdd){
-		try{
-			if(!(ElementoPraAdd instanceof Elemento)) throw "nnÉElemento";
-			
-			this.container.append(ElementoPraAdd)
-			
-		}catch(e){
-			if(e == "nnÉElemento") return
-		}
+		this.container.append(ElementoPraAdd)
 	}
 	createElements(){
 		this.btnExclu = this.btnCloseIt(this.classBtnExclu);
 		this.container = this.ElementContainer(this.classElementContainer);
-		this.Element = this.newElement(this.classElement, this.elementType);		
+		this.Element = this.newElement(this.classElement, this.elementType);
 	}
 	getWholeElement(){
 		this.container.append(this.Element, this.btnExclu);
 		return this.container;
+	}
+	getJust(qual){
+		switch(qual){
+			case "container":
+				return this.container;
+			break;
+			case "Element":
+				return this.Element;
+			break;
+			case "btnExclu":
+				return this.btnExclu;
+		}
 	}
 	defineAdditionalData(to, arrayKeyValuePair){
 		//formato => [
@@ -50,9 +55,9 @@ class Elemento extends Definer{
 			case "Element":{
 				this.elementPropertiesDefiner(this.Element,arrayKeyValuePair);
 				break;
-			}			
+			}
 		}
-	}	
+	}
 }
 
 export default Elemento

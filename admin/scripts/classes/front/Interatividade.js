@@ -1,6 +1,7 @@
 import Elemento from './Element/index.php';
 
 class Interatividade{
+    aux = 0;
     constructor(){}
 
     setInputs(btnNewParag, selectedImages, maisSemiTitle, maisImagem){
@@ -9,18 +10,35 @@ class Interatividade{
         this.maisImagem   = maisImagem;
 
         btnNewParag.onclick = () => {
+            let label = new Elemento('label');
+                label.setClasses('','','');
+                label.defineAdditionalData('Element', [['for', "txa"+this.aux]])
+                label = label.getJust('Element');
+                label.innerText = 'Escreva aqui seu parágrafo';
+                
             let paragrafo = new Elemento("textArea");
-                paragrafo.setClasses("btnCloseParag","divParagrafo","areaCorpoParagrafos");
+                paragrafo.setClasses("btn-close","form-floating m-3","form-control");
+                paragrafo.defineAdditionalData('Element',[['id',"txa"+this.aux++],['placeholder','Escreva aqui seu parágrafo']]);                
             this.divParags.append(paragrafo.getWholeElement());
+            
+                paragrafo.newAdditionalElmnt(label)
         };
         this.maisSemiTitle.onclick = () => {
+            let label = new Elemento('label');
+                label.setClasses('','','');
+                label.defineAdditionalData('Element', [['for', "semit"+this.aux]])
+                label = label.getJust('Element');
+                label.innerText = 'Escreva aqui seu semi-tiulo';
+                
             let title = new Elemento("textArea");
-                title.setClasses("btnCloseSemiTitle", "divSemiTitle", "areaInputSemiTitle");
+                title.setClasses("btn-close","form-floating m-3","form-control");
+                title.defineAdditionalData('Element', [['id', "semit"+this.aux++]])
             this.divParags.append(title.getWholeElement());
+                title.newAdditionalElmnt(label)
         };
         this.maisImagem.onclick = () => {
             let elmnt = new Elemento('input');
-                elmnt.setClasses('btnCloseImg', "divImg", "imgSolta");                
+                elmnt.setClasses('btn-close', "input-group", "form-control");                
             this.divParags.append(elmnt.getWholeElement());
         };
     }

@@ -15,6 +15,21 @@
 		function __toString(){
 			return $this->response;
 		}
+		function verifyAndGetName(){
+			if(isset($_COOKIE['oUserChegouLogado'])){
+				$query1 = "select Name from usuarios where Id = '{$_COOKIE['oUserChegouLogado']}'";
+				foreach($this->pdo->query($query1) as $cada1) $resul['normal'][] = $cada1;
+			}
+			if(isset($_COOKIE['admChegouLogado'])){
+				$query2 = "select Name from autores where Id = '{$_COOKIE['admChegouLogado']}'";
+				foreach($this->pdo->query($query2) as $cada1) $resul['autor'][] = $cada1;
+			}			
+			if(isset($resul)){
+				if(isset($resul['autor'])) return [true, "éAdmOHomi"];
+				if(isset($resul['normal'])) return true;
+			}
+			return false;
+		}
 		function verifyPrevious(){
 			if(isset($_COOKIE['oUserChegouLogado'])){
 				$query1 = "select Id from usuarios where Id = '{$_COOKIE['oUserChegouLogado']}'";
