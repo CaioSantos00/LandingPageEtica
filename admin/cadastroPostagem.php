@@ -32,12 +32,13 @@
                     <textArea placeholder="Escreva aqui seu CSS" id="folhaEstilos" class="form-control"></textArea>
                     <label for="folhaEstilos"> Escreva aqui seu CSS</label>
                 </div>                
-                <div class="form-floating mt-4 mb-5">
+                <div class="form-floating mt-4 mb-3">
                     <textArea placeholder="Escreva aqui seus scripts" id="folhaScripts" class="form-control"></textArea>
-                    <label for="folhaEstilos"> Escreva aqui seu JS</label>
+                    <label for="folhaScripts"> Escreva aqui seu JS</label>
                 </div>
             </div>
-            <div id="paragrafos" class="form-floating"></div>
+            <form id="paragrafos" class="form-floating"></form>
+
             <div class="btn-toolbar mt-4" role="toolbar">
                 <div class="btn-group">
                     <button id="maisParag" class="btn btn-outline-primary">Novo parágrafo</button>

@@ -2,32 +2,41 @@ class SubmissionManager{
     constructor(){
         this.sendables = [];
     }
-    setInput(btnSendIt, divParags, folhaEstilos, selectedImages, inputArquivos){
-        this.btnSendIt =    document.getElementById(btnSendIt);
-        this.divParags =    document.getElementById(divParags);
-        this.folhaEstilos = document.getElementById(folhaEstilos);
-        this.selectedImages=document.getElementById(selectedImages);
-        this.inputArquivos =document.getElementById(inputArquivos);
-
+    setDivsToGetInputs(divParags){
+        this.divParags = divParags;        
+    }
+    setInputsToReceiveData(inputTitle, inputSemiTitle){
+        this.inputTitle = inputTitle;
+        this.inputSemiTitle = inputSemiTitle;
+    }
+    setControllers(btnSendIt){
+        this.btnSendIt = btnSendIt;
+    }
+    setEventListeners(){
         this.btnSendIt.onclick = () => {
             this.getSideInformation();
             this.getParags();
             this.sendIt();
-        }
+        }        
     }
     cleanSelectChilds(elmnt){
         while(elmnt.firstChild) elmnt.firstChild.remove();
     }
     getSideInformation(){
         this.sideInformation = {
-            titulo: document.getElementsByName('titulo')[0].value,
-            semiTitulo: document.getElementsByName('semiTitulo')[0].value
+            titulo: this.inputTitle.value,
+            semiTitulo: this.inputSemiTitle.value
         }
     }
     getParags(){
         let parags = this.divParags.childNodes;
+        let sendableInfo = {};
         for(let x = 0; x != parags.length; x++){
-            this.sendables.push(parags[x].firstChild.value);
+            sendableInfo.type = parags[x].firstChild.className.split(' ')[0];
+            sendableInfo.value = parags[x].firstChild.value;
+            this.sendables.push(sendableInfo);
+            
+            sendableInfo = {};
         }
     }
     getAllData(){
@@ -40,7 +49,7 @@ class SubmissionManager{
     }
     async sendIt(){
         let allData = JSON.stringify(this.getAllData());
-        let data = new FormData();
+        let data = new FormData(this.divParags);
         for(let file of this.inputArquivos.files) data.append('pics', file, file.name);
             
             data.append('data', allData);
@@ -48,8 +57,7 @@ class SubmissionManager{
         let server = await fetch('php/envio.php',{
             method:'POST',
             headers:{
-                'Content-type': 'multipart/form-data; boundary=—-WebKitFormBoundaryfgtsKTYLsT7PNUVD'
-                
+                'Content-type': 'multipart/form-data; boundary=—-WebKitFormBoundaryfgtsKTYLsT7PNUVD'                
             },
             body: data
         });

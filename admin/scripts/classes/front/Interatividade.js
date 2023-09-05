@@ -38,7 +38,8 @@ class Interatividade{
         };
         this.maisImagem.onclick = () => {
             let elmnt = new Elemento('input');
-                elmnt.setClasses('btn-close', "Picture input-group", "form-control");                
+                elmnt.setClasses('btn-close', "Picture input-group", "form-control");
+                elmnt.defineAdditionalData('Element', [['placeholder', 'insira aqui sua imagem']]);
             this.divParags.append(elmnt.getWholeElement());
         };
         
