@@ -12,16 +12,24 @@
 
 			$this->pdo = new PDO('mysql:dbname=etica;host=localhost;charset=UTF8','root','');
 		}
+		function __construct(){
+			$this->pdo = new PDO('mysql:dbname=etica;host=localhost;charset=UTF8','root','');
+		}
 		function __toString(){
 			return $this->response;
 		}
 		function verifyPrevious(){
 			$query1 = "select Id from usuarios where Id = '{$_COOKIE['oUserChegouLogado']}'";
 			$query2 = "select Id from autores where Id = '{$_COOKIE['admChegouLogado']}'";
-			foreach($this->pdo->query($query1) as $cada1){
-				$resul['normal'][] = $cada1;
-			}
 			
+			foreach($this->pdo->query($query1) as $cada1) $resul['normal'][] = $cada1;			
+			foreach($this->pdo->query($query2) as $cada1) $resul['autor'][] = $cada1;
+			
+			if(isset($resul)){
+				if(isset($resul['autor'])) return [true, "éAdmOHomi"];
+				if(isset($resul['normal'])) return true;
+			}
+			return false;
 		}
 		function verify(){
 			$query1 = "select Id from usuarios where Email = '{$this->email}' and Password = '{$this->senha}'";

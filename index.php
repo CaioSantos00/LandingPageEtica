@@ -1,3 +1,13 @@
+<?php
+    require_once "php/LoginVerifier.php";
+    $linkDependendoStatusUsuario = 
+    $verify = new LoginVerifier();
+    $resul = $verify->verifyPrevious();
+    
+    if($resul and is_array($resul)){
+        
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
