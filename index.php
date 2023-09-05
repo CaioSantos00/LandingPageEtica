@@ -1,7 +1,6 @@
 <?php
-    require_once "php/LoginVerifier.php";
-    $linkDependendoStatusUsuario = 
-    $verify = new LoginVerifier();
+    require_once "php/LoginVerifier.php";    
+    $verify = new LoginVerifier('','');
     $resul = $verify->verifyPrevious();
     
     if($resul and is_array($resul)){
