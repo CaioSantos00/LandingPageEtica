@@ -25,8 +25,8 @@
 				foreach($this->pdo->query($query2) as $cada1) $resul['autor'][] = $cada1;
 			}			
 			if(isset($resul)){
-				if(isset($resul['autor'])) return [true, "éAdmOHomi"];
-				if(isset($resul['normal'])) return true;
+				if(isset($resul['autor'])) return [true, "éAdmOHomi", $resul['autor'][0]];
+				if(isset($resul['normal'])) return [true, $resul['normal'][0]];
 			}
 			return false;
 		}

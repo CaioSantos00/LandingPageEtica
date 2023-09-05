@@ -4,11 +4,12 @@ class Interatividade{
     aux = 0;
     constructor(){}
 
-    setInputs(btnNewParag, selectedImages, maisSemiTitle, maisImagem){
+    setInputs(btnNewParag, selectedImages, maisSemiTitle, maisImagem, maisEmptySpc){
         this.selectedImages = selectedImages;
         this.maisSemiTitle  = maisSemiTitle;
-        this.maisImagem   = maisImagem;
-
+        this.maisImagem     = maisImagem;
+        this.maisEmptySpc   = maisEmptySpc;
+        
         btnNewParag.onclick = () => {
             let label = new Elemento('label');
                 label.setClasses('','','');
@@ -41,6 +42,20 @@ class Interatividade{
                 elmnt.setClasses('btn-close', "input-group", "form-control");                
             this.divParags.append(elmnt.getWholeElement());
         };
+        
+        this.maisEmptySpc.onclick = () => {
+            let label = new Elemento('label');
+                label.setClasses('','','');
+                label.defineAdditionalData('Element', [['for', "semit"+this.aux]]);
+                label = label.getJust('Element');
+                label.innerText = 'Escreva aqui seu elemento personalizado';
+                
+            let elmnt = new Elemento('textArea');
+                elmnt.setClasses('btn-close','form-floating m-3','form-control');
+                elmnt.defineAdditionalData('Element', [['id', "semit"+this.aux++]]);
+            this.divParags.append(elmnt.getWholeElement());
+                elmnt.newAdditionalElmnt(label);
+        }
     }
     setOutputs(divParags, inputFiles){
         this.divParags  = divParags;
@@ -64,7 +79,8 @@ class Interatividade{
             let img = document.createElement('img')
                 img.src 		= leitor.result;
                 img.id			= `b${indice}`;
-                img.style.width	= '5vw';
+                img.style.width	= '10vw';                
+                img.className   =  'img-thumbnail border border-4 border-info';
                 img.ondragstart	= (ev)=> {
                     ev.dataTransfer.setData("text/plain", `<img src='${files[indice].name}' id='img${indice}'>`);
                 };
