@@ -1,0 +1,52 @@
+#divBoxTudo {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+#boxPerfil {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4682A9;
+    width: 350px;
+    border-radius: 10px;
+}
+
+#boxInfos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#imgUs {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #9e9e9e;
+}
+
+#boxText {
+    color: #F6F4EB;
+}
+
+#nomeUser {
+    font-size: 1.3em;
+}
+
+#btnEdit {
+    border-radius: 5px;
+    color: #4682A9;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    background-color: #F6F4EB;
+    border: none;
+}
+
+
+#btnEdit:hover {
+    background-color: #e7e7e6;
+}
