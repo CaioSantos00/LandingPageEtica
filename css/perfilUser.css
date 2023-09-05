@@ -1,6 +1,8 @@
 #divBoxTudo {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin-top: 20px;
 }
 
@@ -49,4 +51,28 @@
 
 #btnEdit:hover {
     background-color: #e7e7e6;
+}
+
+#divBtnCriaPubli {
+    margin:  10px;
+}
+
+#btnPubli {
+    width: 365px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 6px 20px;
+    cursor: pointer;
+    border: 2px solid #4682A9 ;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: #e7e7e6;
+    transition: .5s;
+    background-color: #4682A9;
+}
+
+#btnPubli:hover {
+    color: #4682A9;
+    background-color: transparent;
 }
