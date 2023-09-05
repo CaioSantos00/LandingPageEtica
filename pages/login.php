@@ -1,6 +1,14 @@
 <?php
-    if(isset($_POST['submit'])) echo "aaaaaaaa";
+    $response = "false";
+    
+    if(isset($_POST['submit'])){
+        require_once "../php/LoginVerifier.php";        
+        $verify = new LoginVerifier($_POST['email'], $_POST['senha']);
+        
+        $verify->verify();
+    } 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,6 +18,7 @@
     <title>Ética | Cidadania</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
+    <!--<script src="../js/login.js"></script>-->
 </head>
 <body>
      <header id='header'>
@@ -25,13 +34,13 @@
     
     <section>
         <div id="divForms">
-            <form action="login.php" class="forms" method="POST">
+            <form action="login.php" id="formLogin" method="POST">
                 <h1 class="title" id="titleLogin">Login</h1>
-                <input type="text" placeholder="Email" class="input">
-                <input type="text" placeholder="Senha" class="input">
-                <button class="btnForms" name="submit">Entrar</button>
-                <a href="" class="textsForms">Esqueceu sua senha ?</a>
-                <a href="cadastroUsuario.html" class="textsForms">Não é um autor ? Cadastre-se</a>
+                <input type="text" placeholder="Email" class="input" name="email">
+                <input type="text" placeholder="Senha" class="input" name="senha">
+                <input type="submit" id="entrar" name="submit" value="Entrar">                
+                <a href="" id="passEsque">Esqueceu sua senha ?</a>
+                <a href="./registroUser.php" id="passEsque">Não tem conta? Cadastre-se</a>
             </form>
         </div>
     </section>
