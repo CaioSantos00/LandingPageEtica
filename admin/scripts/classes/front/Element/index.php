@@ -1,7 +1,7 @@
 <?php
 	require '../../../../../vendor/autoload.php';
 	use MatthiasMullie\Minify;
-	$cacheFile = '../../../../cache/MinifiedElement.js';	
+	$cacheFile = '../../../../admCache/minifiedPostRegistry.js';	
 		
 	if(file_exists($cacheFile) && (filemtime($cacheFile)+3600) >time()){
 		header('Content-Type: application/javascript');		
@@ -21,5 +21,3 @@
 		echo $minified;
 	}
 ?>
-
-,
