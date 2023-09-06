@@ -1,3 +1,16 @@
+<?php
+    require_once "php/LoginVerifier.php";    
+    $verify = new LoginVerifier('','');
+    $resul = $verify->verifyPrevious();    
+    
+    if($resul){
+        //ta logado        
+       if(is_array($resul)){
+        //é autor
+        }
+    }
+    //é porra nenhuma
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

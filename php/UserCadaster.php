@@ -15,14 +15,9 @@
 		function __toString() return "nn foi";
 		
 		function registry(){			
-			$query = $this->pdo->prepare("INSERT INTO `usuarios` (`Id`, `Name`, `Email`, `Password`, `SavedPosts`, `FollowingAuthors`) VALUES (?,?,?,?,?,?)");
-			var_dump($query);
-			$registro = $query->execute(['null', $this->nome, $this->email, $this->senha, '','',]);
-			
-			print_r($registro);
+			$query = $this->pdo->prepare("INSERT INTO `usuarios` (`Id`, `Name`, `Email`, `Password`, `SavedPosts`, `FollowingAuthors`) VALUES (?,?,?,?,?,?)");			
+			$registro = $query->execute(['null', $this->nome, $this->email, $this->senha, '','',]);						
 			if($registro == 1) header('location: ./login.php');	return;
-			
-			
 		}
 	}
 ?>

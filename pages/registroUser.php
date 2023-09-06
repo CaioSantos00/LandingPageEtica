@@ -1,4 +1,5 @@
 <?php
+	$cad = "'nada'";
 	if(isset($_POST['submit'])){
 		require_once "../php/UserCadaster.php";
 		
@@ -13,8 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ética | Cidadania</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/minifiers/miniLogin.php">
     <script>
 		let resul = <?= $cad ?>;
 		
@@ -42,7 +42,7 @@
                 <input type="text" placeholder="Email" 	class="input" name="email">
                 <input type="text" placeholder="Senha" 	class="input" name="senha">                
                 <input type="submit" id="entrar" name="submit" value="Cadastrar">                                
-                <a href="./registroUser.php" id="passEsque">já tem conta?<br> Entre</a>
+                <a href="./login.php" id="passEsque">já tem conta?<br> Entre</a>
             </form>
         </div>
     </section>

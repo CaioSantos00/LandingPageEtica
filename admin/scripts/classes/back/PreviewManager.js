@@ -3,11 +3,11 @@ class Envio{
         this.sendables = [];
     }
     setInput(btnSendIt, divParags, folhaEstilos, selectedImages, inputArquivos){
-        this.btnSendIt = document.getElementById(btnSendIt);
-        this.divParags = document.getElementById(divParags);
+        this.btnSendIt =    document.getElementById(btnSendIt);
+        this.divParags =    document.getElementById(divParags);
         this.folhaEstilos = document.getElementById(folhaEstilos);
-        this.selectedImages = document.getElementById(selectedImages);
-        this.inputArquivos = document.getElementById(inputArquivos)
+        this.selectedImages=document.getElementById(selectedImages);
+        this.inputArquivos =document.getElementById(inputArquivos);
 
         this.btnSendIt.onclick = () => {
             this.getSideInformation();
