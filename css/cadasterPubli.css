@@ -1,3 +1,14 @@
+#titleAndOlho {
+    display: flex;
+    justify-content: space-between;
+}
+
+#seePrevious {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 #formCreatePubli {
     
     margin: 100px auto;
@@ -34,6 +45,7 @@
     height: 156px;
     font-family: Arial, Helvetica, sans-serif;
     resize: none;
+    outline: 0;
 }
 
 #arquivos {
@@ -46,4 +58,64 @@
 
 .textAreaCodes {
     display: none;
+}
+
+#saveSketch {
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #F6F4EB;
+    border: none;
+    background-color: orange;
+    font-size: 1.2em;
+}
+
+.btnsPubli {
+    padding: 8px;
+    color: #F6F4EB;
+    font-size: 1.2em;
+    border: 3px solid #4682A9;
+    border-radius: 5px;
+    background-color: #4682A9;
+    transition: .5s;
+    cursor: poi nter;
+}
+
+.btnsPubli:hover {
+    color: #4682A9;
+    
+    background-color: transparent;
+}
+
+#btnCreateArtigo {
+    background-color: #12da5f;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    padding: 10px;
+    color: #F6F4EB;
+    cursor: pointer;
+}
+
+.divCardNewArt {
+    background-color: #4682A9;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputNewArt {
+    outline: 0;
+    border-radius: 5px;
+    border: none;
+    height:25px;
+}
+
+.inputNewImgArt {
+    background-color: #F6F4EB;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
 }
