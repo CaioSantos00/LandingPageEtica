@@ -30,16 +30,20 @@
     outline: 0;
 }
 
-#textarea {
+.textArea {
     height: 156px;
     font-family: Arial, Helvetica, sans-serif;
     resize: none;
 }
 
-#inputImg {
+#arquivos {
     background-color: #4682A9;
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
     color: #F6F4EB;
+}
+
+.textAreaCodes {
+    display: none;
 }

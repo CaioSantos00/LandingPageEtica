@@ -24,10 +24,24 @@
         <h1 class="title" id="titlePublicar">Publicar</h1>
         <div id="linha"></div>
         
-        <input type="text" name="" placeholder="Título" class="inputPubli"/>
-        <input type="file" id="inputImg"/>
-        <textarea placeholder="Digite sua descrição" class="inputPubli" id="textarea"></textarea>
-        <input type="submit" class="btnForms" name="submit" value="Publicar">
+        <input type="text" name="titulo" placeholder="Título" class="inputPubli"/>
+        <input type="text" name="semiTitulo" placeholder="Sub título" class="inputPubli"/>
+        <textarea placeholder="Digite sua descrição" class="inputPubli textArea"></textarea>
+        <input type="file" name="arquivos[]" multiple id="arquivos">
+        <button class="btnForms">Adicionar CSS/Javascript</button>
+        <textArea placeholder="Escreva aqui seu CSS" class="inputPubli textArea textAreaCodes" id="folhaEstilos" ></textArea>
+        <textArea placeholder="Escreva aqui seus scripts" class="inputPubli textArea textAreaCodes" id="folhaScripts" ></textArea>
+        <div id="selectedImages"></div>
+        <!--<form id="paragrafos" ></form>-->
+        <div>
+          <button id="seePrevious" >Ver prévia</button>
+          <button id="maisParag" >Novo parágrafo</button>
+          <button id="maisSemiTitle" >Novo semiTitulo </button>
+          <button id="maisImagem" >Nova Imagem </button>
+          <button id="maisEmptySpc">Novo espaço em branco</button>
+        </div>
+        <button id="saveSketch" >Salvar rascunho</button>
+        <button id="sendArticle" class="btnForms">Publicar</button>
       </form>
     </section>
   </body>
