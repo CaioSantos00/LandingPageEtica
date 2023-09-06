@@ -1,4 +1,4 @@
-import Elemento from './Element/index.php';
+/*import Elemento from './Element/index.php';
 
 class Interatividade{
     constructor(){}
@@ -55,4 +55,31 @@ class Interatividade{
         leitor.readAsDataURL(files[indice]);
     }
 }
-export default Interatividade;
+export default Interatividade;*/
+
+let btnCreateArtigo = document.getElementById('btnCreateArtigo')
+let divCreateArtigo = document.getElementById('divCreateArtigo')
+
+btnCreateArtigo.addEventListener('click', () => {
+    let divCardNewArt = document.createElement('div')
+    divCardNewArt.classList.add('divCardNewArt')    
+    let inputNewSubTitle = document.createElement('input')
+    inputNewSubTitle.type = 'text'
+    inputNewSubTitle.classList.add('inputNewArt')
+    inputNewSubTitle.placeholder = 'Novo sub título'
+    let textAreaNewArt = document.createElement('textarea')
+    textAreaNewArt.classList.add('textArea')
+    textAreaNewArt.placeholder = 'Descrição'
+    let newInputFile = document.createElement('input')
+    newInputFile.type = 'file'
+    newInputFile.classList.add('inputNewImgArt')
+    let btnCancelArt = document.createElement('button')
+    btnCancelArt.classList.add('btnCancelArt')
+    btnCancelArt.innerText = 'Cancelar'
+    btnCancelArt.onclick = () => {
+        divCreateArtigo.removeChild(divCardNewArt)
+    }
+
+    divCardNewArt.append(inputNewSubTitle, textAreaNewArt, newInputFile, btnCancelArt)
+    divCreateArtigo.appendChild(divCardNewArt)
+})

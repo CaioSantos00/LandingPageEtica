@@ -45,6 +45,7 @@
     height: 156px;
     font-family: Arial, Helvetica, sans-serif;
     resize: none;
+    border-radius: 5px;
     outline: 0;
 }
 
@@ -54,6 +55,14 @@
     border-radius: 5px;
     cursor: pointer;
     color: #F6F4EB;
+}
+
+#arquivos::file-selector-button {
+    background-color: #F6F4EB;
+    padding: 0.5em;
+    border-radius: 5px;
+    color: #4682A9;
+    border: none;
 }
 
 .textAreaCodes {
@@ -104,6 +113,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 10px;
 }
 
 .inputNewArt {
@@ -113,9 +123,28 @@
     height:25px;
 }
 
+.inputNewImgArt::file-selector-button {
+    color: #F6F4EB;
+    padding: 0.5em;
+    background-color: #4682A9;
+    border: none;
+    border-radius: 5px;
+}
+
 .inputNewImgArt {
+    font-weight: bold;
     background-color: #F6F4EB;
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.btnCancelArt {
+    background-color: #e01b0d;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    color: #F6F4EB;
+    font-size: 1.1em;
 }
