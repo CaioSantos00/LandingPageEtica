@@ -1,0 +1,48 @@
+#sectionPublication {
+    display: flex;
+    gap: 50px;
+}
+
+#sectPubli{
+    padding: 100px 50px;
+}
+
+#titleArti {
+    padding: 20px 0px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #4682A9;
+    border-bottom: 2px solid #4682A9;
+}
+
+#divArtigo {
+    width: 80vw;
+}
+
+#divOutrosArtigos {
+    display: flex;
+    flex-direction: column;
+}
+
+.divInfosArtigo {
+    margin: 20px 0px;
+    color: #4682A9;
+}
+
+.subTitle {
+    margin: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.descriptionArtigo {
+    text-indent: 10px;
+    text-align: justify;
+    color: #366381;
+    font-size: 1em;
+}
+
+.divImgPub {
+    width: 600px;
+    margin: auto;
+}
