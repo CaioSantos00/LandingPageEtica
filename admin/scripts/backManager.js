@@ -1,4 +1,6 @@
 import SubmissionManager from './classes/back/SubmissionManager.js'
+
+
 //BUTTONS
 let btnSendIt =    document.getElementById('sendArticle');
 
@@ -6,7 +8,7 @@ let btnSendIt =    document.getElementById('sendArticle');
 //INPUTS TO GET DATA
 let folhaEstilos    = document.getElementById('folhaEstilos');
 let folhaScripts    = document.getElementById('folhaScripts');
-let inputArquivos   = document.getElementById('inputArquivos');
+let inputArquivos   = document.getElementById('arquivos');
 let inputTitle      = document.getElementsByName('titulo')[0];
 let inputSemiTitle  = document.getElementsByName('semiTitulo')[0];
 let addB5           = document.getElementById('addb5');
@@ -18,7 +20,8 @@ let selectedImages=document.getElementById('selectedImages');
 
 let subMan = new SubmissionManager();    
     subMan.setDivsToGetInputs(divParags);
-    subMan.setInputsToReceiveData(inputTitle, inputSemiTitle);
-    subMan.setControllers(btnSendIt);
+    subMan.setInputsToReceiveData(inputTitle, inputSemiTitle, addB5);
+    subMan.setSheets(folhaEstilos, folhaScripts);
+    subMan.setControllers(btnSendIt, inputArquivos);
     
     subMan.setEventListeners();

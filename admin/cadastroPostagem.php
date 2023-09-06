@@ -37,7 +37,7 @@
                     <label for="folhaScripts"> Escreva aqui seu JS</label>
                 </div>
             </div>
-            <form id="paragrafos" class="form-floating"></form>
+            <div id="paragrafos" class="form-floating"></div>
 
             <div class="btn-toolbar mt-4" role="toolbar">
                 <div class="btn-group">
