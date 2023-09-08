@@ -26,6 +26,7 @@
 		}		
         private function authHeById(string $encryptedIdToSearch) :bool{
 			$encryptedIdToSearch = explode("_", hex2bin($encryptedIdToSearch))[0];
+			
             $select = $this->conn->prepare("SELECT Id,AccountStatus from 'usuarios' where Id = ?");
             foreach($select->execute([$encryptedIdToSearch]) as $cada){
 				$authorData['Id'][] = $cada['Id'];
@@ -42,11 +43,11 @@
             return false;
         }		
 		private function authHeByLogin(string $email, string $senha) :bool{
-			$select = $this->conn->prepare("SELECT Id from 'usuarios' where Email = ? and Password = ? and AccountStatus = 1");
+			$select = $this->conn->prepare("SELECT Id, AccountStatus from 'usuarios' where Email = ? and Password = ?");
 
 			foreach($select->execute([$email, $senha]) as $cada){				
-				$resul[] = $cada['Id'];
-				$resul[] = $cada['AccountStatus'];
+				$resul['Id'] = $cada['Id'];
+				$resul['AccountStatus'] = $cada['AccountStatus'];
 			}
 			if(count($resul) == 2){
 				setcookie('AuthCode', bin2hex($resul[0]."_authenticated",strtotime('+30 days')));
