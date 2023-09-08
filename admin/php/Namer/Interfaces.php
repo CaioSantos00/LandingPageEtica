@@ -6,5 +6,8 @@
 	}
 	interface Receiver{
 		public function GetParsedData() :ParsedData;
+	}	
+	interface Register{
+		public function registryHe() :bool;
 	}
 ?>
