@@ -6,7 +6,6 @@
 		
 		private bool $result;
 		private array $loginArgs;
-		private bool $isAdm;
 		
         function __construct(string $by){
 			$this->switchAuthMethodsBy($by);
@@ -17,29 +16,34 @@
 		private function switchAuthMethodsBy(string $by){
 			switch($by){
 				case "Cookie":
+					if(!isset($_COOKIE['AuthCode'])) exit('nn ta logado');
 					$this->result = $this->authHeById($_COOKIE['AuthCode']);
 					break;
 				case "Login":
 					$this->result = $this->authHeByLogin($this->loginArgs[0], $this->loginArgs[1]);
 					break;
 			}
-		}		
+		}
+		private function changeAuth(string $id = "", string $admStatus = ""){
+			if(!isset($_COOKIE['AuthCode']))	setcookie('AuthCode', bin2hex($id."_authenticated",strtotime('+30 days')));
+			if(!isset($_COOKIE['AccStatus']))	setcookie('accStatus', bin2hex($admStatus."_admStatus", strtotime('+30 days')));
+		}
         private function authHeById(string $encryptedIdToSearch) :bool{
 			$encryptedIdToSearch = explode("_", hex2bin($encryptedIdToSearch))[0];
 			
-            $select = $this->conn->prepare("SELECT Id,AccountStatus from 'usuarios' where Id = ?");
-            foreach($select->execute([$encryptedIdToSearch]) as $cada){
-				$authorData['Id'][] = $cada['Id'];
+            $select = $this->conn->prepare("SELECT AccountStatus from 'usuarios' where Id = ?");
+            foreach($select->execute([$encryptedIdToSearch]) as $cada){				
 				$authorData['AccStatus'][] = $cada['AccountStatus'];
 			}
 			
-            if(count($authorData['Id']) != 0){
-				if($authorData['AccountStatus'] == "1"){
-					$this->isAdm = true;
+            if(count($authorData['Name']) != 0){				
+				if($authorData['AccStatus'] == "1"){
+					$this->changeAuth('',"1");
+					return true;
 				}
+				$this->changeAuth('','0');
 				return true;
 			}
-			$this->isAdm = false;
             return false;
         }		
 		private function authHeByLogin(string $email, string $senha) :bool{
@@ -50,8 +54,7 @@
 				$resul['AccountStatus'] = $cada['AccountStatus'];
 			}
 			if(count($resul) == 2){
-				setcookie('AuthCode', bin2hex($resul[0]."_authenticated",strtotime('+30 days')));
-				setcookie('accStatus', bin2hex($resul[1]."_admStatus", strtotime('+30 days')));
+				$this->changeAuth($resul[0], $resul[1]);
 				return true;
 			}
 			return false;

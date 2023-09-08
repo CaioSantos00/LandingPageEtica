@@ -47,18 +47,15 @@
 		}
 		function verify(){
 			$query1 = "select Id from usuarios where Email = '{$this->email}' and Password = '{$this->senha}'";
-			$query2 = "select Id from autores where Email = '{$this->email}' and Password = '{$this->senha}'";
+			
 
 
 			foreach($this->pdo->query($query1) as $cada1){
 				$resul['normal'][] = $cada1;
 			}
-			foreach($this->pdo->query($query2) as $cada2){
-				$resul['autor'][] = $cada2;
-			}
+
 
 			if(isset($resul)){
-				if(isset($resul['autor'])) 	$this->setLogin(true);
 				if(isset($resul['normal'])) $this->setLogin();
 			}
 		}

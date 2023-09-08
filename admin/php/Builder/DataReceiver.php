@@ -1,5 +1,6 @@
 <?php
-	require_once "Interfaces.php";
+	require_once "../Namer/Interfaces.php";
+	require_once "../Namer/Traits.php";
 
 	class DataReceiver implements Receiver{
 		use DatabaseConnection;

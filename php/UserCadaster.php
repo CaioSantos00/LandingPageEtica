@@ -14,8 +14,8 @@
 		}
 		
 		function registry(){			
-			$query = $this->pdo->prepare("INSERT INTO `usuarios` (`Id`, `Name`, `Email`, `Password`, `SavedPosts`, `FollowingAuthors`) VALUES (?,?,?,?,?,?)");			
-			$registro = $query->execute(['null', $this->nome, $this->email, $this->senha, '','',]);						
+			$query = $this->pdo->prepare("INSERT INTO `usuarios` (`Name`, `Email`, `Password`, `SavedPosts`, `FollowingAuthors`) VALUES (?,?,?,?,?)");			
+			$registro = $query->execute([$this->nome, $this->email, $this->senha, '','',]);						
 			if($registro == 1) header('location: ./login.php');	return;
 		}
 	}

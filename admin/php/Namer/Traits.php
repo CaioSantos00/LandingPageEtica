@@ -1,6 +1,8 @@
-<?php
-	trait DatabaseConnection{
-		private $dbName = "etica";
-		private PDO $conn = new PDO('mysql:dbname={$this->dbName};host=localhost;charset=UTF8','root','');
-	}
+<?php	
+	trait DatabaseConnection{		
+		private PDO $conn;
+		private function connec(){
+			$this->conn =  new PDO("mysql:dbname=etica;host=localhost;charset=UTF8",'root','');			
+		}	
+	}	
 ?>

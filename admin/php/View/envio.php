@@ -7,6 +7,6 @@
       $receiver = new DataReceiver($_POST['data']);
       
       $data = $receiver->getParsedData();      
-      var_dump($data);
+      
    }      
 ?>
