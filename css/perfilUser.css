@@ -1,4 +1,4 @@
-#divBoxTudo {
+.divBoxTudo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@
 }
 
 
-#boxPerfil {
+.boxPerfil {
     display: flex;
     padding: 10px;
     align-items: center;
@@ -17,28 +17,28 @@
     border-radius: 10px;
 }
 
-#boxInfos {
+.boxInfos {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-#imgUs {
+.imgUs {
     width: 50px;
     height: 50px;
     border-radius: 100%;
     background-color: #9e9e9e;
 }
 
-#boxText {
+.boxText {
     color: #F6F4EB;
 }
 
-#nomeUser {
+.nomeUser {
     font-size: 1.3em;
 }
 
-#btnEdit {
+.btnEdit {
     border-radius: 5px;
     color: #4682A9;
     padding: 5px;
@@ -49,11 +49,11 @@
 }
 
 
-#btnEdit:hover {
+.btnEdit:hover {
     background-color: #e7e7e6;
 }
 
-#divBtnCriaPubli {
+.divBtnCriaPubli {
     margin:  10px;
 }
 
