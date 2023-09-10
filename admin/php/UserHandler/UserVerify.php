@@ -7,11 +7,13 @@
 		private bool $result;
 		private array $loginArgs;
 		
-        function __construct(string $by){
-			$this->switchAuthMethodsBy($by);
-        }
+        function __construct(){}
 		function setLoginArgs(string $email, string $senha){
 			$this->loginArgs = [$email, $senha];
+		}
+		function getResponse(string $by) :bool{
+			$this->switchAuthMethodsBy($by);
+			return $this->result;
 		}
 		private function switchAuthMethodsBy(string $by){
 			switch($by){

@@ -2,10 +2,17 @@
     $response = "false";
     
     if(isset($_POST['submit'])){
-        require_once "../php/LoginVerifier.php";        
-        $verify = new LoginVerifier($_POST['email'], $_POST['senha']);
+        require_once "../admin/php/View/Login.php";
+        $verify = new UserVerify();        
+        $verify->setLoginArgs($_POST['email'], $_POST['senha']);
+        if($verify->getResponse('Login')){            
+            if(isset($_COOKIE['AccStatus'])){
+                $status = explode("_", hex2bin($_COOKIE['AccStatus']))[0];
+                if($status == "0") header('location: ../');exit;
+                header('location: ../admin');
+            }
+        }
         
-        $verify->verify();
     } 
 ?>
 
