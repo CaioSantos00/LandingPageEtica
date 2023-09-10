@@ -1,15 +1,13 @@
 <?php
-    require_once "php/LoginVerifier.php";    
-    $verify = new LoginVerifier('','');
-    $resul = $verify->verifyPrevious();    
-    
-    if($resul){
-        //ta logado        
-       if(is_array($resul)){
-        //é autor
-        }
+    require_once "./admin/php/View/Login.php";
+    $verify = new UserVerify();
+    $status = "semLogin";
+    $ele = $verify->getResponse('Cookie');
+    var_dump($ele);
+    if($ele){
+        $status = "Logado";
     }
-    //é porra nenhuma
+    echo $status;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,7 +26,7 @@
             <li><a href="#publications">Publicações</a></li>
             <li><a href="#">Projetos</a></li>
         </ul>
-        </nav>   
+        </nav>
     </header>
     <section id="home">
         <div id="container">

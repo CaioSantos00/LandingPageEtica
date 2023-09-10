@@ -1,3 +1,3 @@
 <?php
-	header("location: cadastroPostagem.php")
+	header('location: cadastroPostagem.php');
 ?>

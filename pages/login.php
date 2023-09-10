@@ -1,19 +1,24 @@
 <?php
     $response = "false";
-    
+
     if(isset($_POST['submit'])){
+        $require = '../';
         require_once "../admin/php/View/Login.php";
-        $verify = new UserVerify();        
+        $verify = new UserVerify();
         $verify->setLoginArgs($_POST['email'], $_POST['senha']);
-        if($verify->getResponse('Login')){            
-            if(isset($_COOKIE['AccStatus'])){
-                $status = explode("_", hex2bin($_COOKIE['AccStatus']))[0];
-                if($status == "0") header('location: ../');exit;
-                header('location: ../admin');
+        if($verify->getResponse('Login')){
+            if(isset($_COOKIE['AuthCode'])){
+                $status = explode("_", hex2bin($_COOKIE['accStatus']))[0];
+                if($status == "0"){
+                    header('location: ../');
+                }else{
+                    header('location: ../admin');
+                }
             }
+        }else{
+            $response = "nem deu pra logar";
         }
-        
-    } 
+    }
 ?>
 
 
@@ -23,7 +28,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ética | Cidadania</title>
-    <link rel="stylesheet" href="../css/minifiers/miniLogin.php">    
+    <link rel="stylesheet" href="../css/minifiers/miniLogin.php">
 </head>
 <body>
      <header id='header'>
@@ -34,15 +39,16 @@
             <li><a href="../index.html#publications">Publicações</a></li>
             <li><a href="#">Projetos</a></li>
         </ul>
-        </nav>   
+        </nav>
     </header>
     <section>
         <div id="divForms">
+            <?= $response ?>
             <form action="login.php" id="formLogin" method="POST">
                 <h1 class="title" id="titleLogin">Login</h1>
                 <input type="text" placeholder="Email" class="input" name="email">
                 <input type="text" placeholder="Senha" class="input" name="senha">
-                <input type="submit" id="entrar" name="submit" value="Entrar">                
+                <input type="submit" id="entrar" name="submit" value="Entrar">
                 <a href="" id="passEsque">Esqueceu sua senha ?</a>
                 <a href="./registroUser.php" id="passEsque">Não tem conta? Cadastre-se</a>
             </form>
