@@ -12,7 +12,6 @@
     font-size: 2.5em;
     font-weight: bold;
     color: #4682A9;
-    border-bottom: 2px solid #4682A9;
 }
 
 #divArtigo {
@@ -24,7 +23,30 @@
     flex-direction: column;
 }
 
-.divInfosArtigo {
+#btnSalve {
+    padding: 8px;
+    color: #F6F4EB;
+    font-size: 1.2em;
+    border: 3px solid #4682A9;
+    border-radius: 5px;
+    background-color: #4682A9;
+    transition: .5s;
+    cursor: pointer;
+}
+
+#btnSalve:hover {
+    color: #4682A9;
+    background-color: transparent;
+}
+
+.divSalTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #4682A9;
+}
+
+.divCardsInfosArtigo {
     margin: 20px 0px;
     color: #4682A9;
 }
