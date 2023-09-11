@@ -1,5 +1,5 @@
 <?php
 	if(isset($_POST['submit'])){
-		require_once "../UserHandler/";
+		require_once "../admin/php/UserHandler/UserRegistry.php";
 	}
 ?>

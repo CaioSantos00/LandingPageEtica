@@ -2,12 +2,10 @@
     require_once "./admin/php/View/Login.php";
     $verify = new UserVerify();
     $status = "semLogin";
-    $ele = $verify->getResponse('Cookie');
-    var_dump($ele);
+    $ele = $verify->getResponse('Cookie');    
     if($ele){
         $status = "Logado";
     }
-    echo $status;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -117,7 +115,7 @@
     </section>
     <footer>
         Copyright ©<br>
-        <a href="pages/login.php">Login</a>
+        <a href="./login.php">Login</a>
     </footer>
 </body>
 </html>

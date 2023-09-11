@@ -1,20 +1,12 @@
 <?php
-    $response = "false";
-
+    $response = "false";     
     if(isset($_POST['submit'])){
-        $require = '../';
-        require_once "../admin/php/View/Login.php";
+        //$require = '../';
+        require_once "admin/php/View/Login.php";
         $verify = new UserVerify();
         $verify->setLoginArgs($_POST['email'], $_POST['senha']);
         if($verify->getResponse('Login')){
-            if(isset($_COOKIE['AuthCode'])){
-                $status = explode("_", hex2bin($_COOKIE['accStatus']))[0];
-                if($status == "0"){
-                    header('location: ../');
-                }else{
-                    header('location: ../admin');
-                }
-            }
+          $response = true; 
         }else{
             $response = "nem deu pra logar";
         }
@@ -35,7 +27,7 @@
      <img src="../img/logo.png" id="logo" alt="">
         <nav id='menu-pc'>
         <ul>
-            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../index.php#home">Home</a></li>
             <li><a href="../index.html#publications">Publicações</a></li>
             <li><a href="#">Projetos</a></li>
         </ul>

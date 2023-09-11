@@ -1,10 +1,10 @@
 <?php
-	$cad = "'nada'";
+	$cad = "nada";
 	if(isset($_POST['submit'])){
-		require_once "../php/UserCadaster.php";
-		
-		$cad = new UserCadaster($_POST['nome'], $_POST['email'],$_POST['senha']);
-		$cad->registry();		
+		require_once "../admin/php/View/cadastro.php";
+
+		$cad = new UserRegistry($_POST['nome'], $_POST['email'],$_POST['senha']);
+		$cad = $cad->registryHe();
 	}
 ?>
 
@@ -17,9 +17,13 @@
     <link rel="stylesheet" href="../css/minifiers/miniLogin.php">
     <script>
 		let resul = <?= $cad ?>;
-		
-		if(resul == "false"){
-			console.log("nem foi")
+
+		if(resul != "nada"){
+			if(resul){
+				location.href = "../";
+			}else{
+				console.log("nem foi");
+			}
 		}
 	</script>
 </head>
@@ -32,7 +36,7 @@
             <li><a href="../index.html#publications">Publicações</a></li>
             <li><a href="#">Projetos</a></li>
         </ul>
-        </nav>   
+        </nav>
     </header>
     <section>
         <div id="divForms">
@@ -40,8 +44,8 @@
                 <h1 class="title" id="titleLogin">Cadastre-se</h1>
 				<input type="text" placeholder="Nome" 	class="input" name="nome">
                 <input type="text" placeholder="Email" 	class="input" name="email">
-                <input type="text" placeholder="Senha" 	class="input" name="senha">                
-                <input type="submit" id="entrar" name="submit" value="Cadastrar">                                
+                <input type="text" placeholder="Senha" 	class="input" name="senha">
+                <input type="submit" id="entrar" name="submit" value="Cadastrar">
                 <a href="./login.php" id="passEsque">já tem conta?<br> Entre</a>
             </form>
         </div>

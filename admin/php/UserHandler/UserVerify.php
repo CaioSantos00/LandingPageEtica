@@ -3,8 +3,7 @@
 		require_once "admin/php/Namer/Traits.php";
 	}else{
 		require_once "{$require}admin/php/Namer/Traits.php";
-	}
-
+	}	
 	class UserVerify{
 		use DatabaseConnection;
 
@@ -13,7 +12,6 @@
 
         function __construct(){
 			$this->connec();
-			print_r($_COOKIE);
 		}
 		function setLoginArgs(string $email, string $senha){
 			$this->loginArgs = [$email, $senha];
@@ -27,30 +25,29 @@
 			//var_dump($by);
 			switch($by){
 				case "Cookie":
-					echo "só";
-					if(!isset($_COOKIE['AuthCode'])){$this->result = false;echo " isso memo";return;}
+					if(!isset($_COOKIE['AuthCode'])){
+						$this->result = false;
+						return;
+					}
 					$this->result = $this->authHeById($_COOKIE['AuthCode']);
 					break;
 				case "Login":
 					$this->result = $this->authHeByLogin($this->loginArgs[0], $this->loginArgs[1]);
 					break;
 				default:
-					echo "é";
+					$this->result = false;
 			}
 		}
 		private function changeAuth(string $id = "", string $admStatus = ""){
-			if(!isset($_COOKIE['AuthCode']))	setcookie('AuthCode', bin2hex($id."_authenticated"),strtotime('+30 days'));
-			if(!isset($_COOKIE['AccStatus']))	setcookie('accStatus', bin2hex($admStatus."_admStatus"), strtotime('+30 days'));
+			if(!isset($_COOKIE['AuthCode']))	setcookie('AuthCode', bin2hex($id."_authenticated"),strtotime('+30 days'),'../');
+			if(!isset($_COOKIE['AccStatus']))	setcookie('accStatus', bin2hex($admStatus."_admStatus"), strtotime('+30 days'),'../');
 		}
         private function authHeById(string $encryptedIdToSearch) :bool{
-			$encryptedIdToSearch = explode("_", hex2bin($encryptedIdToSearch))[0];
-			echo $encryptedIdToSearch;
-            $select = $this->conn->prepare("SELECT AccountStatus from 'usuarios' where Id = ?");
+			$encryptedIdToSearch = explode("_", hex2bin($encryptedIdToSearch))[0];			
+            $select = $this->conn->prepare("SELECT `AccountStatus` from `usuarios` where `Id` = ?");
 			$select->execute([$encryptedIdToSearch]);
-			$query = $select->fetchAll();
-			print_r($query);
-            if(is_array($query)){
-				print_r($query);
+			$query = $select->fetchAll();			
+            if(is_array($query)){				
 				foreach($query as $cada){
 					$authorData['AccStatus'] = $cada['AccountStatus'];
 				}
@@ -72,7 +69,6 @@
 					$resul['Id'] = $cada['Id'];
 					$resul['AccountStatus'] = $cada['AccountStatus'];
 				}
-				print_r($resul);
 				$this->changeAuth($resul['Id'], $resul['AccountStatus']);
 				return true;
 			}
