@@ -12,7 +12,7 @@
 		function registryHe() :bool{
 			$query = $this->conn->prepare("update 'usuarios' set AccountStatus = 1, where Id = ?");
 			if($query->execute($this->authorData) == 1){
-				mkdir('../postagens/'.$this->authorData[0]);
+				if(!is_dir('../postagens'.$this->authorData[0])) mkdir('../postagens/'.$this->authorData[0]);
 				return true;
 			}
 			return false;

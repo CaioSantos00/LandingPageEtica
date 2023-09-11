@@ -1,8 +1,9 @@
 <?php
     require_once "./admin/php/View/Login.php";
+
     $verify = new UserVerify();
     $status = "semLogin";
-    $ele = $verify->getResponse('Cookie');    
+    $ele = $verify->getResponse('Cookie');
     if($ele){
         $status = "Logado";
     }
@@ -13,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ética | Cidadania</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css">    
 </head>
 <body>
      <header id='header'>
