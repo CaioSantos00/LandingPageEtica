@@ -48,10 +48,8 @@ class Envio{
             
             for(let x = 0; x != dados[1][0].length;x++){
                 console.log(dados[1][0])
-                dados[1][0].forEach((cada) => {
-                    
-                    for(let file of cada) data.append('pics[]', file, file.name);
-                    
+                dados[1][0].forEach((cada) => {                    
+                    for(let file of cada) data.append('pics[]', file, file.name);                    
                 })
             }         
         }else{
