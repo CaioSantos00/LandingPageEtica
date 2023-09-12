@@ -62,17 +62,21 @@ let divCreateArtigo = document.getElementById('divCreateArtigo')
 
 btnCreateArtigo.addEventListener('click', () => {
     let divCardNewArt = document.createElement('div')
-    divCardNewArt.classList.add('divCardNewArt')    
+    divCardNewArt.classList.add('divCardNewArt')
+    
     let inputNewSubTitle = document.createElement('input')
     inputNewSubTitle.type = 'text'
     inputNewSubTitle.classList.add('inputNewArt')
     inputNewSubTitle.placeholder = 'Novo sub título'
-    let textAreaNewArt = document.createElement('textarea')
+    
+    let textAreaNewArt = document.createElement('textarea')    
     textAreaNewArt.classList.add('textArea')
     textAreaNewArt.placeholder = 'Descrição'
+    
     let newInputFile = document.createElement('input')
     newInputFile.type = 'file'
     newInputFile.classList.add('inputNewImgArt')
+    
     let btnCancelArt = document.createElement('button')
     btnCancelArt.classList.add('btnCancelArt')
     btnCancelArt.innerText = 'Cancelar'
