@@ -6,7 +6,7 @@
 		$Manager = match($_GET['action']){
 			'getAllSavedPosts' 	=> 	new UserPostManage('getSavedPosts'),
 			'saveAPost'			=> 	new UserPostManage('saveAPost',$_GET['postToSave']),
-			'openSpecificPost'	=>	new UserPostManage('openAPost', $_GET['postToOpen'])
+			'openSpecificPost'	=>	new UserPostManage('openAPost', $_GET['postToOpen']),			
 		};
 		
 		echo $Manager->response;
