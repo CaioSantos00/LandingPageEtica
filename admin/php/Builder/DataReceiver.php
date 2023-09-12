@@ -6,18 +6,17 @@
 		use DatabaseConnection;
 		private array $post;
 		function __construct(string $rawPostData){
-			$this->post = json_decode($rawPostData, JSON_OBJECT_AS_ARRAY);			
+			$this->post = json_decode($rawPostData, JSON_OBJECT_AS_ARRAY);
+			var_dump( $this->post);
 		}
 		function getParsedData() :ParsedData{
 			return new class($this->post) implements ParsedData{
 				private array $elements;
 				private array $sideInformation;
-				private array $sheets;
-				
+
 				function __construct(array $post){
 					$this->elements 		= $post['elements'];
 					$this->sideInformation 	= $post['sideInfo'];
-					$this->sheets 			= array("estilos" => $post['styleSheet'], "scripts" => $post['scriptSheet']);
 				}
 
 				function GetFrontElements() :array{

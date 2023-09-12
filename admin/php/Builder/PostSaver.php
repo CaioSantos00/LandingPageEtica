@@ -1,8 +1,11 @@
 <?php
 	class PostSaver{
-		private $dados;
-		function __construct(){
-			
-		}		
+		private ParserData $dados;
+		function __construct(ParsedData $dados){
+			$this->dados = $dados;
+		}
+		function parsePictures(){
+			//$_FILES['pics']
+		}
 	}
 ?>
