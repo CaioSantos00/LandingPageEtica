@@ -1,4 +1,4 @@
-class Envio{''
+class Envio{
     constructor(Dados, arquivos, btnEnviar){
         this.sendables = [];
         this.Dados = Dados;
@@ -14,42 +14,33 @@ class Envio{''
             this.nroVars++;
         })
     }
-    getOtherInputs(){
-        let inputsSemiTitles = document.getElementsByClassName('inputNewArt');
-        let descricoes = document.getElementsByClassName('textarea');
-        let outrasImgs = document.getElementsByClassName('inputNewImgArt').files;
-
-        return [inputsSemiTitles, descricoes, outrasImgs];
-    }
-    getDataFromOtherInputs(inputsArray){
-        let inputsData = {
-            semiTitulos:[],
-            descricoes:[],
-            imgs:[]
-        }
-        console.log(inputsArray)
-        for(let x = 0; x != this.nroVars;x++){
-            inputsData.semiTitulos.push(inputsArray[0][x].value);
-            inputsData.descricoes.push(inputsArray[1][x+1].value);
-            inputsData.imgs.push(inputsArray[2][x].files);
-        }
-        return inputsData;
-    }
     getAllData(){
-        if(this.nroVars > 0){
-            let inputs = this.getOtherInputs();
-                inputs = this.getDataFromOtherInputs(inputs)
-           return [JSON.stringify([inputs.semiTitulos, inputs.Descricoes]), inputs.imgs];
+        let primarios = {
+            Titulo:this.Dados.titulo.value,
+            SemiT:this.Dados.semiTitulo.value,
+            Descricao:this.Dados.descricao.values
         }
-        return JSON.stringify(this.Dados);
+        if(this.nroVars > 0){
+            let divs = document.getElementsByClassName('divCardNewArt');
+            let filhos, envio = [], imgs = [];
+            for(let x = 0; x != this.nroVars; x++){
+                filhos = divs[x].childNodes;
+                console.log(filhos)
+                imgs.push(filhos[2].files);
+                filhos ={
+                    subTitulo: filhos[0].value,
+                    descricao: filhos[1].value,
+                }
+                envio.push(filhos)
+            }
+            return [JSON.stringify([primarios, envio]), [imgs, this.inputArquivos.files]];
+        }
+        return JSON.stringify(primarios);
     }
     async sendIt(){
         let data = new FormData();
         if(this.nroVars > 0){
             console.log(this.getAllData())
-
-
-
             return
         }
         for(let file of this.inputArquivos.files) data.append('pics', file, file.name);
