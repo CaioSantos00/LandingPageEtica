@@ -3,8 +3,7 @@
 
     $verify = new UserVerify();
     $status = "semLogin";
-    $ele = $verify->getResponse('Cookie');
-    if($ele){
+    if($verify->getResponse('Cookie')){
         $status = "Logado";
     }
 ?>
@@ -20,7 +19,7 @@
      <header id='header'>
      <img src="./img/logo.png" id="logo" alt="">
         <nav id='menu-pc'>
-        <ul>
+        <ul id="lista">
             <li><a href="#home">Home</a></li>
             <li><a href="#publications">Publicações</a></li>
             <li><a href="#">Projetos</a></li>
@@ -116,7 +115,17 @@
     </section>
     <footer>
         Copyright ©<br>
-        <a href="./login.php">Login</a>
     </footer>
+    <script>
+        let lista = document.getElementById('lista');
+        let itens = lista.innerHTML;
+        let userStatus = '<?= $status ?>';
+        if(userStatus == 'Logado'){
+            itens += '<li><a href="">Perfil</a></li>';
+        }else{
+            itens += '<a href="./login.php">Login</a>';
+        }
+        lista.innerHTML = itens;
+    </script>
 </body>
 </html>
