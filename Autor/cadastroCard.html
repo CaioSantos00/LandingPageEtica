@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/login.css" />
     <link rel="stylesheet" href="../css/cadasterPubli.css">
     <script src="../admin/scripts/classes/front/Interatividade.js" defer></script>
+    <script src="../admin/scripts/backManager.js" defer type="module"></script>
+    
   </head>
   <body>
     <header id="header">
@@ -29,7 +31,7 @@
         <div id="linha"></div>
         <input type="text" name="titulo" placeholder="Título" class="inputPubli"/>
         <input type="text" name="semiTitulo" placeholder="Sub título" class="inputPubli"/>
-        <textarea placeholder="Digite sua descrição" class="inputPubli textArea"></textarea>
+        <textarea placeholder="Digite sua descrição" class="inputPubli textArea" name="descricao"></textarea>
         <input type="file" name="arquivos[]" multiple id="arquivos">
         <div id="divCreateArtigo">
           <!--<div class="divCardNewArt">
@@ -37,7 +39,7 @@
             <textarea name="" id="" class="textArea" placeholder="Descrição"></textarea>
             <input type="file" name="" class="inputNewImgArt">
             <button class="btnCancelArt">Cancelar</button>
-          </div>-->
+          <!--</div>---->
           
         </div>
         <button id="btnCreateArtigo">Criar Artigo</button>

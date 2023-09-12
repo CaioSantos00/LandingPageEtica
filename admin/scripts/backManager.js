@@ -1,4 +1,13 @@
-import Envio from './classes/back/Envio.js'
+import Envio from './classes/back/Envio.js';
 
-let envio = new Envio();
-    envio.setInput('sendArticle', 'paragrafos', 'folhaEstilos', 'selectedImages','arquivos', 'autor');
+let Dados = {};
+Dados.titulo = document.getElementsByName('titulo')[0];
+Dados.semiTitulo = document.getElementsByName('semiTitulo')[0];
+Dados.descricao = document.getElementsByName('descricao')[0];
+Dados.folhaEstilos = document.getElementById('folhaEstilos');
+Dados.folhaScripts = document.getElementById('folhaScripts');
+
+let arquivos = document.getElementById('arquivos');
+let enviar = document.getElementById('sendArticle');
+
+let envio = new Envio(Dados, arquivos, enviar)
