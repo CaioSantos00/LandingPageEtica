@@ -1,6 +1,8 @@
 #variasPubli {
   display: grid;
-  grid-template-areas: "cardMinhasPubli cardMinhasPubli cardMinhasPubli cardMinhasPubli";
+  grid-template-areas: "cardMinhasPubli cardMinhasPubli cardMinhasPubli";
+  justify-items: center;
+  justify-content: center;
   gap: 20px;
 }
 

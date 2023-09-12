@@ -1,0 +1,12 @@
+@media screen and (max-width:890px){
+    section{
+        padding: 100px 20px 100px 20px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    #formCreatePubli {
+        width: calc(100% - 40px);
+    }
+}
+

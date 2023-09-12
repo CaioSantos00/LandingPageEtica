@@ -1,0 +1,124 @@
+/* 
+    BREAK POINTS USADOS
+    
+        360 feito (370px)
+        375 feito (370px)
+        411 feito (460px)
+        610 problemas com header (670px e 610px)
+        768 feito (760px)
+        950 feito (970px)
+        1115 feito (1120px)
+        1366 feito (tá legal no meu pc, e 1370px)
+        1920 teóricamente feito (tá legal no pc da escola
+    */
+
+@media screen and (max-width:1370px) {
+    #capetinha {
+        width: 550px;
+    }
+
+    #publications {
+        padding-top: 0px;
+    }
+}
+
+@media screen and (max-width:1120px) {
+    #containerCard {
+        grid-template-areas: 'cardsInfos cardsInfos cardsInfos';
+    }
+
+    #container {
+        grid-template-areas: 'box';
+        justify-items: center;
+        margin-top: 10vh;
+    }
+
+    #capetinha {
+        width: 650px;
+    }
+}
+
+@media screen and (max-width:970px){
+    #containerCard {
+        grid-template-areas: 'cardsInfos cardsInfos';
+    }
+}
+
+@media screen and (max-width:760px){
+    #capetinha {
+        width: 550px;
+    }
+}
+
+@media screen and (max-width:670px) {
+    #containerCard {
+        grid-template-areas: 'cardsInfos';
+    }
+}
+
+@media screen and (max-width:610px) {
+    #capetinha {
+        display: none;
+    }
+
+    section {
+        padding: 100px 50px 0px 50px;
+    }
+
+    #publications {
+        padding: 100px 50px 40px 50px;
+    }
+}
+
+@media screen and (max-width: 460px){
+
+    .title {
+        text-align: center;
+    }
+
+    #box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #veja {
+        width: 100%;
+    }
+
+    #container {
+        margin-top: 3vh;
+    }
+}
+
+@media screen and (max-width:410px){
+    #box {
+        text-align: center;
+    }
+
+    section {
+        padding: 100px 30px 0px 30px;
+    }
+
+    #publications {
+        padding: 100px 30px 40px 30px;
+    }
+}
+
+@media screen and (max-width:370px){
+    #text {
+        font-size: 1.08em;
+    }
+
+    #container {
+        margin-top: 0;
+    }
+
+    section {
+        padding: 100px 10px 0px 10px;
+    }
+
+    #publications {
+        padding: 70px 10px 40px 10px;
+    }
+}

@@ -1,0 +1,59 @@
+@media screen and (max-width: 1065px) {
+    #sectionPublication {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap:20px;
+    }  
+
+    #divArtigo {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .divImgPub {
+        width: 100%;
+    }
+
+    .divImgPub img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    #divArtigo {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #divArtigo {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 552px){
+    #divArtigo {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:400px){
+    .title {
+        text-align: center;
+    }
+
+    #divOutrosArtigos{
+        width: 100%;
+    }
+
+    .cardsInfos {
+        width: calc(100% - 20px);
+        padding: 0px 10px 0px 10px
+    }
+
+    #sectPubli {
+        padding: 100px 35px 100px 35px;
+    }
+}
