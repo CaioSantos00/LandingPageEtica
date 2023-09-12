@@ -18,7 +18,7 @@ class Envio{
         let primarios = {
             Titulo:this.Dados.titulo.value,
             SemiT:this.Dados.semiTitulo.value,
-            Descricao:this.Dados.descricao.values
+            Descricao:this.Dados.descricao.value,
         }
         if(this.nroVars > 0){
             let divs = document.getElementsByClassName('divCardNewArt');
@@ -39,12 +39,25 @@ class Envio{
     }
     async sendIt(){
         let data = new FormData();
+
         if(this.nroVars > 0){
-            console.log(this.getAllData())
-            return
-        }
-        for(let file of this.inputArquivos.files) data.append('pics', file, file.name);
+            let dados = this.getAllData();
+            console.log(dados)
+            data.append('data', dados[0]);
+            for(let file of this.inputArquivos.files) data.append('pics[]', file, file.name);
+            
+            for(let x = 0; x != dados[1][0].length;x++){
+                console.log(dados[1][0])
+                dados[1][0].forEach((cada) => {
+                    
+                    for(let file of cada) data.append('pics[]', file, file.name);
+                    
+                })
+            }         
+        }else{
+         for(let file of this.inputArquivos.files) data.append('pics', file, file.name);
             data.append('data', this.getAllData());
+        }
         let server = await fetch('../admin/php/envio.php',{
             method:'POST',
             body: data
