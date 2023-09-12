@@ -1,0 +1,77 @@
+@media screen and (max-width:1200px) {
+    #section {
+        padding: 100px 50px 0px 50px;
+    }
+
+    .cardMinhasPubli {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    #variasPubli {
+        grid-template-areas: "cardMinhasPubli cardMinhasPubli";
+    }
+
+    .cardMinhasPubli {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width:930px) {
+    .cardMinhasPubli {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 830px){
+    .cardMinhasPubli {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 730px){
+    #variasPubli {
+        grid-template-areas: "cardMinhasPubli";
+    }
+
+    .cardMinhasPubli {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 615px){
+    .cardMinhasPubli {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 565px){
+    .cardMinhasPubli {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 515px){
+    .cardMinhasPubli {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 465px){
+    .cardMinhasPubli {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 415px){
+    .cardMinhasPubli {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 365px){
+    .cardMinhasPubli {
+        width: 200px;
+    }
+}

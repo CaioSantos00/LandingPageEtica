@@ -1,6 +1,8 @@
 #variasPubli {
   display: grid;
-  grid-template-areas: "cardMinhasPubli cardMinhasPubli cardMinhasPubli cardMinhasPubli";
+  grid-template-areas: "cardMinhasPubli cardMinhasPubli cardMinhasPubli";
+  justify-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -23,12 +25,6 @@
   margin: 0px 0px 10px 0px;
 }
 
-.check {
-  border: 2px;
-  width: 18px;
-  height: 18px;
-}
-
 .descriViewPubli {
     color: #25465c;
     text-indent: 10px;
@@ -49,4 +45,14 @@
 
 .btnVeja:hover {
     background-color: #25465c;
+}
+
+.btnExclu {
+  border-radius: 5px;
+  color: #F6F4EB;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  background-color: red;
+  border: none;
 }
