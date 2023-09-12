@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ética | Cidadania</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
     <script>
 		let resul = <?= $cad ?>;
 		
@@ -28,21 +28,21 @@
      <img src="../img/logo.png" id="logo" alt="">
         <nav id='menu-pc'>
         <ul>
-            <li><a href="../index.html#home">Home</a></li>
-            <li><a href="../index.html#publications">Publicações</a></li>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#publications">Publicações</a></li>
             <li><a href="#">Projetos</a></li>
         </ul>
         </nav>   
     </header>
     <section>
         <div id="divForms">
-            <form action="registroUser.php" id="formLogin" method="POST">
-                <h1 class="title" id="titleLogin">Cadastre-se</h1>
+            <form action="registroUser.php" class="forms" method="POST">
+                <h1 class="title">Cadastre-se</h1>
 				<input type="text" placeholder="Nome" 	class="input" name="nome">
                 <input type="text" placeholder="Email" 	class="input" name="email">
                 <input type="text" placeholder="Senha" 	class="input" name="senha">                
-                <input type="submit" id="entrar" name="submit" value="Cadastrar">                                
-                <a href="./registroUser.php" id="passEsque">já tem conta?<br> Entre</a>
+                <input type="submit" class="btnForms" name="submit" value="Cadastrar">
+                <a href="login.php" id="passEsque">já tem conta? Entre</a>
             </form>
         </div>
     </section>
