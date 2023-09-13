@@ -1,12 +1,12 @@
 <?php
     $response = "false";
-    
+
     if(isset($_POST['submit'])){
-        require_once "../php/LoginVerifier.php";        
-        $verify = new LoginVerifier($_POST['email'], $_POST['senha']);
-        
-        $verify->verify();
-    } 
+        require_once "admin/php/View/Login.php";
+        $verify = new UserVerify();
+        $verify->setLoginArgs($_POST['email'], $_POST['senha']);
+        $response = $verify->getResponse('Login');
+    }
 ?>
 
 
@@ -18,21 +18,26 @@
     <title>Ética | Cidadania</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/login.css">
-    <!--<script src="../js/login.js"></script>-->
+    <script>
+        let response = '<?= $response ?>';
+        if(response != 'false' && response == '1'){
+            location.href = './PerfilUser/perfilUser.html'
+        }
+    </script>
 </head>
 <body>
      <header id='header'>
-     <img src="../img/logo.png" id="logo" alt="">
+     <img src="img/logo.png" id="logo" alt="">
         <nav id='menu-pc'>
         <ul>
             <li><a href="index.html#home">Home</a></li>
             <li><a href="index.html#publications">Publicações</a></li>
             <li><a href="login.php">Login</a></li>
         </ul>
-        </nav>   
+        </nav>
     </header>
-    
-    <section>
+
+    <section>        
         <div id="divForms">
         <form action="login.php" class="forms" method="POST">
                 <h1 class="title" id="titleLogin">Login</h1>
