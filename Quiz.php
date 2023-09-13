@@ -43,8 +43,8 @@
      <img src="img/logo.png" id="logo" alt="">
         <nav id='menu-pc'>
         <ul>
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#publications">Publicações</a></li>
+            <li><a href="index.php#home">Home</a></li>
+            <li><a href="index.php#publications">Publicações</a></li>
             <li><a href="login.php">Login</a></li>
         </ul>
         </nav>
@@ -63,5 +63,15 @@
             </form>
         </div>
     </section>
+    <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 </body>
 </html>

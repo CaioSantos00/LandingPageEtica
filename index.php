@@ -25,7 +25,7 @@
             <li><a href="#publications">Publicações</a></li>
             <li><a href="login.php">Login</a></li>
         </ul>
-        </nav>
+        </nav>   
     </header>
     <section id="home">
         <div id="container">
@@ -52,12 +52,23 @@
                 <a href="./pages/pagesPublications/publicação.html"><button class="btnVeja">Veja mais Sobre</button></a>
                 </div>
             </div>
-        </div>
+        </div>                    
     </section>
     <footer>
         Copyright ©<br>
     </footer>
+    
+    
+    <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+
         let lista = document.getElementById('lista');
         let itens = lista.innerHTML;
         let userStatus = '<?= $status ?>';

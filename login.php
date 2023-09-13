@@ -7,6 +7,15 @@
         $verify->setLoginArgs($_POST['email'], $_POST['senha']);
         $response = $verify->getResponse('Login');
     }
+
+    require_once "./admin/php/View/Login.php";
+
+    $verify = new UserVerify();
+    $status = "semLogin";
+    if($verify->getResponse('Cookie')){
+        $status = "Logado";
+    }
+
 ?>
 
 
@@ -30,9 +39,9 @@
      <header id='header'>
      <img src="img/logo.png" id="logo" alt="">
         <nav id='menu-pc'>
-        <ul>
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#publications">Publicações</a></li>
+        <ul id="lista">
+            <li><a href="./index.php#home">Home</a></li>
+            <li><a href="./index.php#publications">Publicações</a></li>
             <li><a href="login.php">Login</a></li>
         </ul>
         </nav>
@@ -50,5 +59,25 @@
             </form>
         </div>
     </section>
+    <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+    let lista = document.getElementById('lista');
+        let itens = lista.innerHTML;
+        let userStatus = '<?= $status ?>';
+        if(userStatus == 'Logado'){
+            itens += '<li><a href="">Perfil</a></li>';
+        }else{
+            itens += '<a href="./login.php">Login</a>';
+        }
+        lista.innerHTML = itens;
+  </script>
 </body>
 </html>
