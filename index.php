@@ -23,7 +23,6 @@
         <ul id="lista">
             <li><a href="#home">Home</a></li>
             <li><a href="#publications">Publicações</a></li>
-            <li><a href="login.php">Login</a></li>
         </ul>
         </nav>   
     </header>

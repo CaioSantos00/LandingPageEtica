@@ -42,7 +42,6 @@
         <ul id="lista">
             <li><a href="./index.php#home">Home</a></li>
             <li><a href="./index.php#publications">Publicações</a></li>
-            <li><a href="login.php">Login</a></li>
         </ul>
         </nav>
     </header>
