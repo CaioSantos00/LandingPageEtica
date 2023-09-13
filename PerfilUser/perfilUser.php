@@ -30,7 +30,6 @@
       <ul>
         <li><a href="../index.php#home">Home</a></li>
         <li><a href="../index.php#publications">Publicações</a></li>
-        <li><a href="../pages/login.php">Login</a></li>
       </ul>
     </nav>
 

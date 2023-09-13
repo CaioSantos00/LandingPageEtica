@@ -24,7 +24,6 @@
             <li><a href="#home">Home</a></li>
             <li><a href="./Quiz.php">Quiz</a></li>
             <li><a href="#publications">Publicações</a></li>
-            <li><a href="login.php">Login</a></li>
         </ul>
         </nav>   
     </header>
