@@ -63,16 +63,19 @@
 		private function authHeByLogin(string $email, string $senha) :bool{
 			$select = $this->conn->prepare("SELECT `Id`, `AccountStatus` from `usuarios` where Email = ? and Password = ?;");
 			$select->execute([$email, $senha]);
-			$query = $select->fetchAll();
-			if(is_array($query)){
+			$query = $select->fetchAll();			
+			if(is_array($query)){				
 				foreach($query as $cada){
 					$resul['Id'] = $cada['Id'];
 					$resul['AccountStatus'] = $cada['AccountStatus'];
 				}
-				$this->changeAuth($resul['Id'], $resul['AccountStatus']);
-				return true;
+				if(isset($resul['Id']) and isset($resul['AccountStatus'])){
+					$this->changeAuth($resul['Id'], $resul['AccountStatus']);
+					return true;	
+				}
+			return false;	
 			}
-			return false;
+			
 		}		
 	}
 ?>
