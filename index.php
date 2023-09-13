@@ -25,7 +25,7 @@
             <li><a href="#publications">Publicações</a></li>
             <li><a href="login.php">Login</a></li>
         </ul>
-        </nav>   
+        </nav>
     </header>
     <section id="home">
         <div id="container">
@@ -52,14 +52,11 @@
                 <a href="./pages/pagesPublications/publicação.html"><button class="btnVeja">Veja mais Sobre</button></a>
                 </div>
             </div>
-        </div>                    
+        </div>
     </section>
     <footer>
         Copyright ©<br>
     </footer>
-    
-    
-
 <script>
         let lista = document.getElementById('lista');
         let itens = lista.innerHTML;

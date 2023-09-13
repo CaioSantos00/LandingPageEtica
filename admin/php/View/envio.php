@@ -3,7 +3,7 @@
       $require = '../../../';
       require_once "../Builder/DataReceiver.php";
       require_once "../UserHandler/UserVerify.php";
-      require_once "../Builder/PostSaver..php";
+      require_once "../Builder/PostSaver.php";
       
       $verifier = new UserVerify("Cookie");
       $receiver = new DataReceiver($_POST['data']);      

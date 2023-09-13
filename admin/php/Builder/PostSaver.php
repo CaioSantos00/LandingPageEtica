@@ -4,20 +4,22 @@
 	class PostSaver{
 		use DatabaseConnection;
 
-		private ParserData $dados;
+		private ParsedData $dados;
 		private string $postPath;
 		private string $authorId;
 		function __construct(ParsedData $dados){
 			$this->dados = $dados;
 			$this->connec();
 
-			$this->authorId = explode("_", hex2bin($_COOKIE['AuthCode']))[0];
-			$this->postPath = "../../../postagens/{$this->authorId}/{$this->conn->lastInsertId()}";
+			$this->authorId = explode("_", hex2bin($_COOKIE['AuthCode']))[0];			
+			if(!is_dir("../../../autores/{$this->authorId}")) mkdir("../../../autores/{$this->authorId}");
+			$this->postPath = "../../../autores/{$this->authorId}/{$this->conn->lastInsertId()}";
+			if(!is_dir($this->postPath)) mkdir($this->postPath);
 		}
 		function saveThem(){
 			$this->savePost();
-			$this->savePrincipais($dados->get(true));
-			$this->saveArticles($dados->get());
+			$this->savePrincipais($this->dados->get(true));
+			$this->saveArticles($this->dados->get());
 			$this->parsePictures();
 		}
 		private function savePrincipais(array $principais){
@@ -27,24 +29,27 @@
 		}
 		private function saveArticles(array $articles){
 			$artigos = fopen($this->postPath."artigos.txt", 'wb');			
-			fwrite($artigos, json_encode($articles));
-			fclose($artigos);
+			if(fwrite($artigos, json_encode($articles)) !== false){
+				fclose($artigos);
+				return true;
+			}
+			return false;
 		}
 		private function parsePictures(){
 			$nroArqvs = count($_FILES['pics']['name']);
 			if(!is_dir($this->postPath."/imgs")) mkdir($this->postPath."/imgs");
 			if($nroArqvs > 1){
 				for($x = 0; $x !=$nroArqvs; $x++){
-					move_uploaded_file($_FILES['pics']['tmp_name'][$x], $this->postPath."/".$_FILES['pics']['name'][$x]);
+					$ret[] = move_uploaded_file($_FILES['pics']['tmp_name'][$x], $this->postPath."/".$_FILES['pics']['name'][$x]);
 				}
-				return;
+				return $ret;
 			}
-			move_uploaded_file($_FILES['pics']['tmp_name'], $this->postPath."/".$_FILES['pics']['name']);
+			return move_uploaded_file($_FILES['pics']['tmp_name'], $this->postPath."/".$_FILES['pics']['name']);
 		}
-		private function savePost(){
+		private function savePost(){			
 			$dado = $this->dados->get(true);
 			$query = $this->conn->prepare('insert into `posts`(`Title`,`WrittedBy`,`IsDone`) values (?,?,?)');
-			$query->execute([$dado['Titulo'],$this->authorId, 1]);			
+			return $query->execute([$dado['Titulo'],$this->authorId, 1]);			
 		}
 	}
 ?>
