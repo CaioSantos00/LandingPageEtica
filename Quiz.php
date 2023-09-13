@@ -1,7 +1,13 @@
 <?php
+	$foi = 'nem';
 	if(isset($_POST['submit'])){
-		$respostas = ['','','','',''];
-		if
+		$respostas = ['moral e iss','','','',''];
+		$foi = true;
+		for($x = 1; $x != 6; $x++){
+			if($respostas[$x] != $_POST['quest'.$x]){
+				$foi = false;
+			}
+		}
 	}
 ?>
 <!DOCTYPE html>
@@ -15,9 +21,17 @@
     </head>
 <body>
 	<script>
-	let questoes = ['','','','',''];
+	let foi = '<?= $foi ?>';
+	let questoes =
+	['O que é moral?',
+		'Qual é a diferença entre ética e moral?',
+		'O que é considerado moral?',
+		'O que é considerado imoral?',
+		'O que é considerado amoral?'
+	];	
 	let inputs = document.getElementsByClassName('input');
-	for(let x = 0;x != inputs.length;x++){
+	console.log(inputs)
+	for(let x = 0;x != 5;x++){
 		inputs[x].placeholder = questoes[x];
 	}
 	</script>
@@ -32,16 +46,16 @@
         </nav>
     </header>
 
-    <section>        
+    <section>
         <div id="divForms">
         <form action="Quiz.php" class="forms" method="POST">
                 <h1 class="title" id="titleLogin">Login</h1>
-                <input type="text" placeholder="" class="input" name="quest1">                
-                <input type="text" placeholder="" class="input" name="quest2">                
-                <input type="text" placeholder="" class="input" name="quest3">                
-                <input type="text" placeholder="" class="input" name="quest4">                
-                <input type="text" placeholder="" class="input" name="quest5">                
-                <button class="btnForms" name="submit">Entrar</button>                
+                <input type="text" placeholder="" class="input" name="quest1">
+                <input type="text" placeholder="" class="input" name="quest2">
+                <input type="text" placeholder="" class="input" name="quest3">
+                <input type="text" placeholder="" class="input" name="quest4">
+                <input type="text" placeholder="" class="input" name="quest5">
+                <button class="btnForms" name="submit">Entrar</button>
             </form>
         </div>
     </section>
