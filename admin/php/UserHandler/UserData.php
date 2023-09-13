@@ -12,13 +12,12 @@
 			return explode('_',hex2bin($cookie))[0];
 		}
 		private function getUserDataWithId(string $id){
-			$query = $this->conn->prepare("select `Name`, `Email`, `SavedPosts` from `usuarios` where `Id` = ?");
+			$query = $this->conn->prepare("select `Name`, `Email` from `usuarios` where `Id` = ?");
 			$query->execute([$id]);
 			$query = $query->fetchAll();
 			foreach($query as $cada){
 				$this->userData['nome'] = $cada['Name'];
-				$this->userData['Email'] = $cada['Email'];
-				$this->userData['SavedPosts'] = $cada['SavedPosts'];
+				$this->userData['Email'] = $cada['Email'];				
 			}
 		}		
 	}

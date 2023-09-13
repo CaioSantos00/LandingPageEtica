@@ -2,8 +2,7 @@
   if(!isset($_COOKIE['AuthCode'])) header('location: ../');
   $justData = true;
   require_once "../admin/php/View/Login.php";
-  $data = new UserData($_COOKIE['AuthCode']);
-  print_r($data->userData);
+  $data = new UserData($_COOKIE['AuthCode']);  
 ?>
 
 <!DOCTYPE html>

@@ -56,7 +56,7 @@ class Envio{
          for(let file of this.inputArquivos.files) data.append('pics', file, file.name);
             data.append('data', this.getAllData());
         }
-        let server = await fetch('../admin/php/envio.php',{
+        let server = await fetch('../admin/php/View/envio.php',{
             method:'POST',
             body: data
         });

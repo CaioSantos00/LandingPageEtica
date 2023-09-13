@@ -1,14 +1,11 @@
 <?php
-	if(isset($_GET['action'])){
-		require_once "admin/php/Builder/UserPostManage.php";
-		
-				
-		$Manager = match($_GET['action']){
+	if(isset($action)){
+		$toRequire = isset($realPath) ? "{$realPath}/admin/php/Builder/UserPostManage.php" : "admin/php/Builder/UserPostManage.php";
+		require_once $toRequire;						
+		$Manager = match($action){
 			'getAllSavedPosts' 	=> 	new UserPostManage('getSavedPosts'),
-			'saveAPost'			=> 	new UserPostManage('saveAPost',$_GET['postToSave']),
-			'openSpecificPost'	=>	new UserPostManage('openAPost', $_GET['postToOpen']),			
-		};
-		
-		echo $Manager->response;
+			'saveAPost'			=> 	new UserPostManage('saveAPost',$postToSave),
+			'openSpecificPost'	=>	new UserPostManage('openAPost', $postToOpen),			
+		};				
 	}
 ?>
