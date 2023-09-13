@@ -12,6 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ética | Cidadania</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/mediaQueries/init.css">
   <script src="../js/SavedPostsCards.js" posts='<?= $Manager->response ?>'> </script>
 </head>
 
@@ -39,7 +40,86 @@
             <a href="../pages/pagesPublications/publicação.html"><button class="btnVeja">Veja mais Sobre</button></a>
             </div>
         </div>
-        
+        <div class="cardsInfos">
+            <div class="divImg">
+                <img class="imgsCards" src="../img/capetinha.png" alt="">
+            </div>
+            <div class="cardsDescri">
+                <div class="cardTitle">Title</div>
+            <div class="cardDescri">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia maxime aspernatur velit sed non earum inventore, consequuntur vitae officiis minus aut, corporis soluta reprehenderit vero dolorem molestias harum officia laudantium!</div>
+            <a href="../pages/pagesPublications/publicação.html"><button class="btnVeja">Veja mais Sobre</button></a>
+            </div>
+        </div>
+        <div class="cardsInfos">
+            <div class="divImg">
+                <img class="imgsCards" src="../img/capetinha.png" alt="">
+            </div>
+            <div class="cardsDescri">
+                <div class="cardTitle">Title</div>
+            <div class="cardDescri">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia maxime aspernatur velit sed non earum inventore, consequuntur vitae officiis minus aut, corporis soluta reprehenderit vero dolorem molestias harum officia laudantium!</div>
+            <a href="../pages/pagesPublications/publicação.html"><button class="btnVeja">Veja mais Sobre</button></a>
+            </div>
+        </div>
+        <div class="cardsInfos">
+            <div class="divImg">
+                <img class="imgsCards" src="../img/capetinha.png" alt="">
+            </div>
+            <div class="cardsDescri">
+                <div class="cardTitle">Title</div>
+            <div class="cardDescri">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia maxime aspernatur velit sed non earum inventore, consequuntur vitae officiis minus aut, corporis soluta reprehenderit vero dolorem molestias harum officia laudantium!</div>
+            <a href="../pages/pagesPublications/publicação.html"><button class="btnVeja">Veja mais Sobre</button></a>
+            </div>
+        </div>
+        <div class="cardsInfos">
+            <div class="divImg">
+                <img class="imgsCards" src="../img/capetinha.png" alt="">
+            </div>
+            <div class="cardsDescri">
+                <div class="cardTitle">Title</div>
+            <div class="cardDescri">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia maxime aspernatur velit sed non earum inventore, consequuntur vitae officiis minus aut, corporis soluta reprehenderit vero dolorem molestias harum officia laudantium!</div>
+            <a href="../pages/pagesPublications/publicação.html"><button class="btnVeja">Veja mais Sobre</button></a>
+            </div>
+        </div>        
+        <div class="cardsInfos">
+            <div class="divImg">
+                <img class="imgsCards" src="../img/capetinha.png" alt="">
+            </div>
+            <div class="cardsDescri">
+                <div class="cardTitle">Title</div>
+            <div class="cardDescri">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia maxime aspernatur velit sed non earum inventore, consequuntur vitae officiis minus aut, corporis soluta reprehenderit vero dolorem molestias harum officia laudantium!</div>
+            <a href="../pages/pagesPublications/publicação.html"><button class="btnVeja">Veja mais Sobre</button></a>
+            </div>
+        </div>
+        <div class="cardsInfos">
+            <div class="divImg">
+                <img class="imgsCards" src="../img/capetinha.png" alt="">
+            </div>
+            <div class="cardsDescri">
+                <div class="cardTitle">Title</div>
+            <div class="cardDescri">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia maxime aspernatur velit sed non earum inventore, consequuntur vitae officiis minus aut, corporis soluta reprehenderit vero dolorem molestias harum officia laudantium!</div>
+            <a href="../pages/pagesPublications/publicação.html"><button class="btnVeja">Veja mais Sobre</button></a>
+            </div>
+        </div>
+        <div class="cardsInfos">
+            <div class="divImg">
+                <img class="imgsCards" src="../img/capetinha.png" alt="">
+            </div>
+            <div class="cardsDescri">
+                <div class="cardTitle">Title</div>
+            <div class="cardDescri">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia maxime aspernatur velit sed non earum inventore, consequuntur vitae officiis minus aut, corporis soluta reprehenderit vero dolorem molestias harum officia laudantium!</div>
+            <a href="../pages/pagesPublications/publicação.html"><button class="btnVeja">Veja mais Sobre</button></a>
+            </div>
+        </div>
+        <div class="cardsInfos">
+            <div class="divImg">
+                <img class="imgsCards" src="../img/capetinha.png" alt="">
+            </div>
+            <div class="cardsDescri">
+                <div class="cardTitle">Title</div>
+            <div class="cardDescri">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia maxime aspernatur velit sed non earum inventore, consequuntur vitae officiis minus aut, corporis soluta reprehenderit vero dolorem molestias harum officia laudantium!</div>
+            <a href="../pages/pagesPublications/publicação.html"><button class="btnVeja">Veja mais Sobre</button></a>
+            </div>
+        </div>
     </div>
   </section>
 </body>
