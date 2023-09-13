@@ -64,6 +64,7 @@
 			$select = $this->conn->prepare("SELECT `Id`, `AccountStatus` from `usuarios` where Email = ? and Password = ?;");
 			$select->execute([$email, $senha]);
 			$query = $select->fetchAll();
+			print_r($query);
 			if(is_array($query)){
 				foreach($query as $cada){
 					$resul['Id'] = $cada['Id'];
