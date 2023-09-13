@@ -6,6 +6,7 @@
     <title>Ética | Cidadania</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/pagePublication.css">
+    <link rel="stylesheet" href="../../css/mediaQueries/publis.css">
     <script src="../../Scripts/btnSalve.js" defer></script>
 </head>
 <body>
