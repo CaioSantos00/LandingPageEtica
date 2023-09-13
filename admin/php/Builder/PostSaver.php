@@ -28,7 +28,7 @@
 			fclose($principais);
 		}
 		private function saveArticles(array $articles){
-			$artigos = fopen($this->postPath."artigos.txt", 'wb');			
+			$artigos = fopen($this->postPath."/artigos.txt", 'wb');			
 			if(fwrite($artigos, json_encode($articles)) !== false){
 				fclose($artigos);
 				return true;
