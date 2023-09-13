@@ -6,12 +6,18 @@
         'É moral aquilo que vai de acordo com os valores de alguém ou um grupo. Por exemplo, doar para os necessitados é considerado moral em muitas culturas.',
         'É imoral aquilo que vai contra os valores de alguém ou um grupo. Por exemplo, para os muçulmanos, não usar burca é imoral.',
         'É amoral aquele que desconhece a moral ou ações que são neutras perante a moral. Por exemplo, o gato é amoral, ele não sabe que não pode derrubar o vaso da cozinha.'];
-		$foi = true;
-		for($x = 1; $x != 6; $x++){
-			if($respostas[$x] != $_POST['quest'.$x]){
-				$foi = false;
+		if($_POST['quest1'] == $respostas[0]){
+			if($_POST['quest2'] == $respostas[1]){
+				if($_POST['quest3'] == $respostas[2]){
+					if($_POST['quest4'] == $respostas[3]){
+						if($_POST['quest5'] == $respostas[4]){
+								$foi = true;
+						}
+					}
+				}
 			}
 		}
+
 	}
 ?>
 <!DOCTYPE html>
@@ -24,21 +30,6 @@
     <link rel="stylesheet" href="./css/login.css">
     </head>
 <body>
-	<script>
-	let foi = '<?= $foi ?>';
-	let questoes =
-	['O que é moral?',
-		'Qual é a diferença entre ética e moral?',
-		'O que é considerado moral?',
-		'O que é considerado imoral?',
-		'O que é considerado amoral?'
-	];	
-	let inputs = document.getElementsByClassName('input');
-	console.log(inputs)
-	for(let x = 0;x != 5;x++){
-		inputs[x].placeholder = questoes[x];
-	}
-	</script>
      <header id='header'>
      <img src="img/logo.png" id="logo" alt="">
         <nav id='menu-pc'>
@@ -53,12 +44,17 @@
     <section>
         <div id="divForms">
         <form action="Quiz.php" class="forms" method="POST">
-                <h1 class="title" id="titleLogin">Login</h1>
-                <input type="text" placeholder="" class="input" name="quest1">
-                <input type="text" placeholder="" class="input" name="quest2">
-                <input type="text" placeholder="" class="input" name="quest3">
-                <input type="text" placeholder="" class="input" name="quest4">
-                <input type="text" placeholder="" class="input" name="quest5">
+                <h1 class="title" id="titleLogin"><?php
+									if($foi == "nem") {
+										echo "Quiz";}else if($foi == true) {
+											echo "Parabens";
+											}
+								?></h1>
+                <input type="text" placeholder="O que é moral?" class="input" name="quest1">
+                <input type="text" placeholder="Qual é a diferença entre ética e moral?" class="input" name="quest2">
+                <input type="text" placeholder="O que é considerado moral?" class="input" name="quest3">
+                <input type="text" placeholder="O que é considerado imoral?" class="input" name="quest4">
+                <input type="text" placeholder="O que é considerado amoral?" class="input" name="quest5">
                 <button class="btnForms" name="submit">Entrar</button>
             </form>
         </div>

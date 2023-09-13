@@ -4,15 +4,11 @@
   $tabela = '';
   require_once "../admin/php/View/Login.php";
   $data = new UserData($_COOKIE['AuthCode']);
-  $accStatus = explode('_',hex2bin($_COOKIE['accStatus']))[0];  
-
-  require_once "./admin/php/View/Login.php";
-
-  $verify = new UserVerify();
-  $status = "semLogin";
-  if($verify->getResponse('Cookie')){
-      $status = "Logado";
-  }
+  $accStatus = explode('_',hex2bin($_COOKIE['accStatus']))[0];
+  
+  
+  
+  
 ?>
 
 <!DOCTYPE html>

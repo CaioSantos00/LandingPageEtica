@@ -22,6 +22,7 @@
         <nav id='menu-pc'>
         <ul id="lista">
             <li><a href="#home">Home</a></li>
+            <li><a href="./Quiz.php">Quiz</a></li>
             <li><a href="#publications">Publicações</a></li>
             <li><a href="login.php">Login</a></li>
         </ul>
@@ -47,9 +48,9 @@
                     <img class="imgsCards" src="./img/capetinha.png" alt="">
                 </div>
                 <div class="cardsDescri">
-                    <div class="cardTitle">Title</div>
-                <div class="cardDescri">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia maxime aspernatur velit sed non earum inventore, consequuntur vitae officiis minus aut, corporis soluta reprehenderit vero dolorem molestias harum officia laudantium!</div>
-                <a href="./pages/pagesPublications/publicação.html"><button class="btnVeja">Veja mais Sobre</button></a>
+                    <div class="cardTitle">A história da ética</div>
+                <div class="cardDescri">Veja como surgiu a ética!</div>
+                <a href="./pages/publicacaoPronta.php"><button class="btnVeja">Veja mais Sobre</button></a>
                 </div>
             </div>
         </div>                    
