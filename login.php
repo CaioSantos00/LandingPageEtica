@@ -21,7 +21,7 @@
     <script>
         let response = '<?= $response ?>';
         if(response != 'false' && response == '1'){
-            location.href = './PerfilUser/perfilUser.html'
+            location.href = './PerfilUser/perfilUser.php';
         }
     </script>
 </head>
