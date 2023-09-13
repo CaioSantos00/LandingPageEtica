@@ -7,6 +7,7 @@
 
 		private array $authorData;
 		function __construct(string $id){
+			$this->connec();
 			$this->authorData = [$id];
 		}
 		function registryHe() :bool{
@@ -16,6 +17,10 @@
 				return true;
 			}
 			return false;
+		}
+		function getAllUsers() :array{
+			$query = $this->conn->query("select `Id`,`Name`, `Email`, `AccountStatus` from `usuarios`");
+			return $query;
 		}
 	}
 ?>
