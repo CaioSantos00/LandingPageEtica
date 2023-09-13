@@ -1,8 +1,12 @@
 <?php
-    $action = 'getAllPosts';
-    require_once "admin/php/View/manipulaPostagens.php";    
-?>
+    require_once "./admin/php/View/Login.php";
 
+    $verify = new UserVerify();
+    $status = "semLogin";
+    if($verify->getResponse('Cookie')){
+        $status = "Logado";
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -16,7 +20,7 @@
      <header id='header'>
      <img src="./img/logo.png" id="logo" alt="">
         <nav id='menu-pc'>
-        <ul>
+        <ul id="lista">
             <li><a href="#home">Home</a></li>
             <li><a href="#publications">Publicações</a></li>
             <li><a href="login.php">Login</a></li>
@@ -53,5 +57,19 @@
     <footer>
         Copyright ©<br>
     </footer>
+    
+    
+
+<script>
+        let lista = document.getElementById('lista');
+        let itens = lista.innerHTML;
+        let userStatus = '<?= $status ?>';
+        if(userStatus == 'Logado'){
+            itens += '<li><a href="">Perfil</a></li>';
+        }else{
+            itens += '<a href="./login.php">Login</a>';
+        }
+        lista.innerHTML = itens;
+    </script>
 </body>
 </html>
