@@ -1,7 +1,11 @@
 <?php
 	$foi = 'nem';
 	if(isset($_POST['submit'])){
-		$respostas = ['moral e iss','','','',''];
+		$respostas = ['A moral é o conjunto de normas, valores e princípios que orientam o comportamento humano em sociedade. É individual e variável, e é definida através da cultura e criação de cada um.',
+        'A ética é o estudo da moral de forma geral, enquanto a moral é a prática da ética no dia a dia. A ética é mais universal e objetiva, enquanto a moral é mais individual e subjetiva',
+        'É moral aquilo que vai de acordo com os valores de alguém ou um grupo. Por exemplo, doar para os necessitados é considerado moral em muitas culturas.',
+        'É imoral aquilo que vai contra os valores de alguém ou um grupo. Por exemplo, para os muçulmanos, não usar burca é imoral.',
+        'É amoral aquele que desconhece a moral ou ações que são neutras perante a moral. Por exemplo, o gato é amoral, ele não sabe que não pode derrubar o vaso da cozinha.'];
 		$foi = true;
 		for($x = 1; $x != 6; $x++){
 			if($respostas[$x] != $_POST['quest'.$x]){
