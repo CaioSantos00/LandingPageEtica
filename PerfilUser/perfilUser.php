@@ -1,8 +1,10 @@
 <?php
   if(!isset($_COOKIE['AuthCode'])) header('location: ../');
   $justData = true;
+  $tabela = '';
   require_once "../admin/php/View/Login.php";
-  $data = new UserData($_COOKIE['AuthCode']);  
+  $data = new UserData($_COOKIE['AuthCode']);
+  $accStatus = explode('_',hex2bin($_COOKIE['accStatus']))[0];  
 ?>
 
 <!DOCTYPE html>
